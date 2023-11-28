@@ -1,0 +1,149 @@
+.ImgTextHolder {
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    margin-top: 3.5vh;
+    max-width: 1680px;
+
+
+    opacity: 0;
+    transform: translateX(-400px);
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-400px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.in_view {
+    animation: slideInFromLeft 1.6s cubic-bezier(0.34, 0.35, 0.23, 1) 0s, fadeIn 2s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0s forwards;
+    opacity: 0;
+    transform: translateX(0px);
+}
+
+.SectionStairs {
+    background: #262626;
+}
+
+.wrapper {
+    width: 90%;
+    padding: 95px 0 95px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.StairsH2 {
+    color: var(--Accent_1);
+    text-shadow: 0 0 50px #000;
+    font-size: var(--section-h2);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%;
+}
+
+.StairsHolder {
+    margin-top: 95px;
+}
+
+.StairsImg {
+    position: relative;
+    width: 50vw;
+    max-width: 695px;
+    aspect-ratio: 697 / 63;
+    border: #ffffff 1px solid;
+}
+
+.StairsText {
+    color: var(--Text_1);
+
+/* website text */
+text-shadow: 0 0 50px #000;
+font-size: var(--Computer-content-small);
+font-weight: 600;
+line-height: 115%
+}
+
+
+@media screen and (max-width: 1439px) {
+    .wrapper {
+        height: unset;
+        padding: 65px 0 65px 0;
+    }
+    .StairsHolder {
+        margin-top: 30px;
+    }
+    .ImgTextHolder {
+        gap: 10%;
+        margin-top: 2.7vh;
+        max-width: 1385px;
+    }
+    .StairsImg {
+        position: relative;
+        width: 44vw;
+        max-width: 615px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .ImgTextHolder {
+        gap: 5%;
+        margin-top: 2.5vh;
+    }
+    .StairsHolder {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .StairsImg {
+        width: 36vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stairsH2 {
+        line-height: 105%;
+    }
+    .wrapper {
+        padding: 50px 0 50px 0;
+    }
+    .ImgTextHolder {
+        gap: 6%;
+        margin-top: 3.5vh;
+        padding-left: 30px!important;
+    }
+    .StairsImg {
+        width: 63%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ImgTextHolder {
+        flex-direction: column-reverse;
+        gap: 15px;
+        margin-top: 30px;
+        padding-left: 0!important;
+        align-items: flex-start;
+    }
+    .StairsImg {
+        width: 85%;
+    }
+}
+@media screen and (max-width: 410px) {
+    .StairsH2 {
+        font-size: var(--Computer-content-big);
+    }
+}

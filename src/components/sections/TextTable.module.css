@@ -1,0 +1,92 @@
+.tableSection {
+    width: 100%;
+    padding: 130px 0px 100px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableTitle {
+    text-align: center;
+    font-size: var(--section-h1);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%;
+
+
+    background: var(--gradient-1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tableCol2 {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-row-gap: 40px; 
+    max-width: 1385px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tableCol1 {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-row-gap: 60px; 
+    max-width: 1385px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.centerAlign {
+    width: 75%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.leftAlign {
+    width: 75%;
+    max-width: 650px;
+    text-align: left;
+}
+
+.heading {
+    font-size: var(--Computer-content-big);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.colorful {
+    background: var(--gradient-1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text {
+    margin-top: 23px;
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .text {
+        margin-top: 23px;
+
+        font-size: var(--Computer-content-small);
+        font-weight: 600;
+        line-height: 115%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+}

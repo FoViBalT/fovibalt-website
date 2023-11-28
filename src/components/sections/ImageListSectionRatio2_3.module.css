@@ -1,0 +1,74 @@
+.imageTextSection {
+    width: 90%;
+    padding-top: 150px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tableCol2Ratio3_2 {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    justify-items: center;
+    align-items: center;
+    max-width: 1385px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageHolder {
+    width: 45vw;
+    height: calc(685 / 1410 * 45vw);
+    max-width: 552px;
+    max-height: 503px;
+    position: relative;
+}
+
+.textHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.listHeading {
+    text-align: left;
+    font-size: var(--Computer-content-big);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%;
+    font-family: var(--font-FuturaDemiC);
+}
+
+.icon {
+    color: #ADC6FF;
+    font-size: 40px!important;
+}
+.tableText {
+    width: 80%;
+    max-width: 840px;
+    text-align: left;
+    font-size: var(--Computer-content-small);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: var(--font-FuturaDemiC);
+}
+
+.iconTextHolder {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+
+}
+
+@media screen and (max-width: 1150px) {
+    .tableText {
+        width: 100%;
+        max-width: 480px;
+        font-size: var(--Computer-content-small);
+    }
+
+    .icon {
+        font-size: 30px!important;
+    }
+}

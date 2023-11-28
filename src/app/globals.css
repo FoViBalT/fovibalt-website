@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --Background_1: #1A1A1A;
+  --Text_1: #EDF0FF;
+  --For_blured_1: 255, 255, 255, 0.04;
+  --gradient-1: linear-gradient(91deg, #597EFF 0%, #FF58DC 100%);
+  --Accent_1: #ADC6FF;
+    --Test_color_3: #916A95;
+
+  --section-h1: 128px;
+  --section-h2: 96px;
+  --Computer-content-big: 60px;
+  --Computer-content-small: 34px;
+}
+
+@media screen and (max-width: 1439px) {
+    :root {
+        --section-h1: 114px;
+        --section-h2: 84px;
+        --Computer-content-big: 48px;
+        --Computer-content-small: 30px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    :root {
+        --section-h1: 96px;
+        --section-h2: 60px;
+        --Computer-content-big: 34px;
+        --Computer-content-small: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --section-h1: 60px;
+        --section-h2: 48px;
+        --Computer-content-big: 30px;
+        --Computer-content-small: 18px;
+    }
+}
+
+body {
+  background: var(--Background_1);
+  color: var(--Text_1);
+  width: calc(100vw - 10px);
+  /*color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));*/
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

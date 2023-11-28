@@ -1,0 +1,106 @@
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(400px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to your element */
+.slide_in_hero {
+    animation: slideInFromBottom 1.6s cubic-bezier(0.34, 0.35, 0.19, 1.23) 0.2s, fadeIn 3s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0.2s forwards;
+}
+
+.fade_in {
+    opacity: 0;
+    animation: fadeIn 2.1s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0.8s forwards;
+}
+
+
+.hero {
+    width: 100%;
+}
+.heroContentWrapper {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15vh;
+    padding-bottom: 90px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroH1 {
+    text-align: center;
+    text-shadow: 0px 0px 50px #000;
+    font-size: var(--section-h1);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%;
+
+    font-family: var(--font-FuturaDemiC);
+
+    background: var(--gradient-1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    opacity: 0;
+    animation: fadeIn 2.5s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0.5s forwards;
+
+}
+
+/*calc( position@min-width + (100vw - screen@min-width px) / (screen@max-width - screen@min-width) * (position@max-width - position@min-width) )*/
+.heroImgHolder {
+    margin-top: calc(-16px + (100vw - 1440px) / (2100 - 1440) * (63 + 16));
+    position: relative;
+    max-width: 1000px;
+    width: 80vw;
+    aspect-ratio: 1920 / 1080;
+    opacity: 0;
+}
+
+@media screen and (max-width: 1439px) {
+    .heroContentWrapper {
+        padding-top: 13vh;
+    }
+    .heroImgHolder {
+        margin-top: 45px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .heroImgHolder {
+        margin-top: 0;
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .heroContentWrapper {
+        padding-top: 15vh;
+    }
+    .heroImgHolder {
+        width: 90vw;
+        margin-top: 8vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .heroImgHolder {
+        width: 100vw;
+        margin-top: 8vh;
+    }
+}

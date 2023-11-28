@@ -1,0 +1,129 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fading_out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+.in_view_image {
+    animation: fadeIn 1.6s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0s forwards;
+}
+
+.in_view {
+    animation: zoomIn 1.5s cubic-bezier(0.34, 0.35, 0.23, 1) 0.4s, fadeIn 2.5s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0.4s forwards;
+}
+
+
+.imageTextSection {
+    width: 90%;
+    padding: 110px 0 200px 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tableCol2Ratio2_3 {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    justify-items: center;
+    align-items: center;
+    max-width: 1385px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageHolder {
+    width: 80%;
+    aspect-ratio: 720 / 1080;
+}
+
+.tableText {
+    max-width: 840px;
+    text-align: center;
+    font-size: var(--section-h2);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%;
+
+    opacity: 0;
+}
+
+@media screen and (max-width: 1439px) {
+    .tableText {
+        font-size: var(--section-h2);
+    }
+    .imageTextSection {
+        padding: 80px 0 200px 0;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .tableText {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .tableText {
+        width: 90%;
+        font-size: var(--Computer-content-big);
+    }
+    .tableCol2Ratio2_3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .imageTextSection {
+        width: 95%;
+    }
+    .imageHolder {
+        width: 90%;
+        aspect-ratio: 720 / 1080;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .tableCol2Ratio2_3 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .imageTextSection {
+        padding: 0 0 120px 0;
+    }
+    .tableText {
+        font-size: var(--section-h2);
+        line-height: 105%;
+    }
+    .imageHolder {
+        width: 70%;
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width: 410px) {
+    .imageTextSection {
+        padding: 20px 0 70px 0;
+    }
+    .tableText {
+        font-size: var(--Computer-content-big);
+        line-height: 100%;
+    }
+    .imageHolder {
+        width: 80%;
+        margin-top: 30px;
+    }
+}
