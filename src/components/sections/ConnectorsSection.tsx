@@ -4,7 +4,13 @@ import styles from "./ConnectorsSection.module.css";
 import Image from "next/image";
 import RadialGradientHighlight from "../parts/RadialGradientHighlight";
 import {useEffect, useRef} from "react";
+import {useInView} from "react-intersection-observer";
 export default function ConnectorsSection() {
+
+    const [ref, inView] = useInView({
+        threshold: 0.5,
+        triggerOnce: true,
+    });
 
     const title1 = useRef<HTMLHeadingElement | null>(null);
     const title2 = useRef<HTMLHeadingElement | null>(null);
@@ -225,7 +231,7 @@ export default function ConnectorsSection() {
                     <h3 ref={title1} className={styles.title}>Lighting connectors</h3>
                     <h3 ref={title2} className={`${styles.title} ${styles.fade_out}`}>Power connectors</h3>
                 </div>
-                <div className={styles.contentHolder}>
+                <div ref={ref} className={`${styles.contentHolder} ${inView ? styles.fadeInCell : ''}`}>
                     <p ref={text1} className={styles.text1}>MR-30 connector for addressable LED strip</p>
                     <p ref={text2} className={styles.text2}>5 pin connector for RGB WW CW strips</p>
                     <div ref={line1} className={styles.line1}></div>
@@ -246,7 +252,7 @@ export default function ConnectorsSection() {
                                 src={''}
                                 alt={'alt'}
                                 fill={true}
-                                priority={true}>
+                                loading="eager">
                             </Image>
                         }>
                         </RadialGradientHighlight>
@@ -257,36 +263,3 @@ export default function ConnectorsSection() {
         </section>
     )
 }
-/*
-    return (
-        <section ref={container} className={styles.sectionWrapper}>
-            <div className={styles.sticky}>
-                <h3 className={styles.title}>4 step setup & configuration</h3>
-                <div className={styles.twoColumnContainer}>
-                    <div className={styles.imageHolder}>
-                        <Image
-                            className={`${styles.imageSetup} ${styles.fade_out}`}
-                            ref={image}
-                            src={''}
-                            alt={'alt'}
-                            fill={true}
-                            priority={true}>
-                        </Image>
-                        <Image ref={enterSSID}
-                               className={`${styles.enterSSID} ${styles.fade_out}`}
-                               src={'/images/enterSSID.png'}
-                               alt={'alt'}
-                               fill={true}>
-                        </Image>
-                    </div>
-                    <div className={styles.textHolder}>
-                        <p ref={text1} className={`${styles.text} ${styles.fade_out}`}>Step 1: Connect LED strip lighting with fovicable to fovilight</p>
-                        <p ref={text2} className={`${styles.text} ${styles.fade_out}`}>Step 2: Fovilight detects LED type and LED count of connected LED strip</p>
-                        <p ref={text3} className={`${styles.text} ${styles.fade_out}`}>Step 3: Scan QR-code on all your fovilights</p>
-                        <p ref={text4} className={`${styles.text} ${styles.fade_out}`}>Step 4: Enter SSID and password of your router and press connect all</p>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-    )*/

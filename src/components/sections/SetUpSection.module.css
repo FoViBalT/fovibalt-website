@@ -39,7 +39,6 @@
     margin-top: 130px;
     justify-items: center;
     gap: 40px;
-
 }
 
 .container {
@@ -105,7 +104,31 @@
 }
 
 @media screen and (max-width: 768px) {
+    .twoColumnContainer {
+        grid-template-columns: 1fr;
+        margin-top: 60px;
+        justify-items: center;
+        gap: 60px;
+    }
+    .text {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .sectionWrapper {
+        width: 95%;
+    }
+    .twoColumnContainer {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+        justify-items: center;
+        gap: 40px;
+    }
     .text {
         font-size: var(--Computer-content-small);
+        text-align: center;
+        width: 100%;
     }
 }

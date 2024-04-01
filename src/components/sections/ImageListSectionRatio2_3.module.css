@@ -16,11 +16,10 @@
 }
 
 .imageHolder {
-    width: 45vw;
-    height: calc(685 / 1410 * 45vw);
+    width: 28vw;
     max-width: 552px;
-    max-height: 503px;
     position: relative;
+    aspect-ratio: 570 / 1047;
 }
 
 .textHolder {
@@ -29,13 +28,50 @@
     align-items: flex-start;
 }
 
+/*Styling for headers */
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide_in_from_button {
+    animation: slideInFromBottom 0.9s cubic-bezier(0.34, 0.35, 0.19, 1.23) 0.2s, fadeIn 0.6s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0.2s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fading_out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+/*Styling for headers end */
+
 .listHeading {
     text-align: left;
     font-size: var(--Computer-content-big);
     font-style: normal;
     font-weight: 600;
     line-height: 115%;
-    font-family: var(--font-FuturaDemiC);
+    opacity: 0;
 }
 
 .icon {
@@ -50,14 +86,38 @@
     font-style: normal;
     font-weight: 600;
     line-height: 100%;
-    font-family: var(--font-FuturaDemiC);
 }
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-40px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.in_view {
+    animation: slideInFromLeft 1.6s cubic-bezier(0.34, 0.35, 0.23, 1) 0s, fadeIn 2s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0s forwards;
+}
+
 
 .iconTextHolder {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
+
+    opacity: 0;
 
 }
 
@@ -70,5 +130,24 @@
 
     .icon {
         font-size: 30px!important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .imageTextSection {
+        width: 95%;
+    }
+
+    .tableCol2Ratio3_2 {
+        display: flex;
+        gap: 40px;
+        flex-direction: column-reverse;
+    }
+
+    .imageHolder {
+        width: 70%;
+        max-width: 552px;
+        position: relative;
+        aspect-ratio: 570 / 1047;
     }
 }

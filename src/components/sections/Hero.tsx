@@ -9,7 +9,7 @@ export default function Hero() {
         <div className={styles.heroContentWrapper}>
         <h1 className={styles.heroH1}>fovilight 1</h1>
             <div className={styles.fade_in}>
-                <Button text="Buy now" type="big" marginTop={15}></Button>
+                <Button text="Become a beta tester" type="big" marginTop={15}></Button>
             </div>
         <div className={`${styles.heroImgHolder} ${styles.slide_in_hero}`}>
             <Image
