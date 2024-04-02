@@ -31,9 +31,22 @@
     line-height: 115%;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeInCell {
+    animation: fadeIn 1.5s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0s forwards;
+}
+
 .contentHolder {
     position: relative;
-
+    opacity: 0;
 }
 
 .text1 {
@@ -269,11 +282,11 @@
         top: 673px;
     }
     .text1 {
-        left: calc(415px + (100vw - 1281px) / (1439 - 1281) * (506 - 415));
+        left: calc(390px + (100vw - 1281px) / (1439 - 1281) * (506 - 390));
         top: 196px;
     }
     .text2 {
-        left: calc(531px + (100vw - 1281px) / (1439 - 1281) * (595 - 531));
+        left: calc(527px + (100vw - 1281px) / (1439 - 1281) * (595 - 527));
         top: 590px;
     }
     .text3 {
@@ -281,7 +294,7 @@
         top: 196px;
     }
     .text4 {
-        left: calc(175px + (100vw - 1281px) / (1439 - 1281) * (245 - 175));
+        left: calc(156px + (100vw - 1281px) / (1439 - 1281) * (245 - 156));
         top: 590px;
     }
     .text5 {
@@ -483,55 +496,62 @@
         width: 300px;
         height: 168px;
     }
+    /*calc( position@min-width + (100vw - screen@min-width) / (screen@max-width - screen@min-width) * (position@max-width - position@min-width) )*/
     .line1 {
-        left: calc(290px + (100vw - 501px) / (768 - 501) * (500 - 290));
+        left: calc(215px + (100vw - 320px) / (501 - 320) * (290 - 215));
         top: 130px;
         width: 4px;
     }
     .line2 {
-        left: calc(194px + (100vw - 501px) / (768 - 501) * (283 - 194));
+        left: calc(120px + (100vw - 320px) / (501 - 320) * (194 - 120));
         top: 673px;
         width: 4px;
     }
     .line3 {
-        left: calc(151px + (100vw - 501px) / (768 - 501) * (185 - 151));
+        left: calc(81px + (100vw - 320px) / (501 - 320) * (151 - 81));
         top: 130px;
         width: 4px;
     }
     .line4 {
-        left: calc(208px + (100vw - 501px) / (768 - 501) * (432 - 208));
+        left: calc(137px + (100vw - 320px) / (501 - 320) * (221 - 137));
         top: 673px;
         width: 4px;
     }
     .line5 {
-        left: calc(260px + (100vw - 501px) / (768 - 501) * (317 - 260));
+        left: calc(176px + (100vw - 320px) / (501 - 320) * (260 - 176));
         top: 673px;
         width: 4px;
+        line-height: 20px;
     }
     .text1 {
-        left: calc(98px + (100vw - 501px) / (768 - 501) * (277 - 98));
+        left: calc(28px + (100vw - 320px) / (501 - 320) * (98 - 28));
         top: 125px;
         width: 180px;
+        line-height: 20px;
     }
     .text2 {
-        left: calc(208px + (100vw - 501px) / (768 - 501) * (306 - 208));
-        top: 358px;
+        left: calc(131px + (100vw - 320px) / (501 - 320) * (208 - 131));
+        top: 369px;
         width: 160px;
+        line-height: 20px;
     }
     .text3 {
-        left: calc(163px + (100vw - 501px) / (768 - 501) * (204 - 163));
+        left: calc(91px + (100vw - 320px) / (501 - 320) * (163 - 91));
         top: 125px;
         width: 180px;
+        line-height: 20px;
     }
     .text4 {
-        left: calc(0px + (100vw - 501px) / (768 - 501) * (52 - 0));
-        top: 358px;
-        width: 200px;
+        left: calc(10px + (100vw - 320px) / (501 - 320) * (92 - 10));
+        top: 350px;
+        width: 120px;
+        line-height: 20px;
     }
     .text5 {
-        left: calc(271px + (100vw - 501px) / (768 - 501) * (450 - 271));
-        top: 358px;
-        width: 200px;
+        left: calc(185px + (100vw - 320px) / (501 - 320) * (271 - 185));
+        top: 350px;
+        width: 125px;
+        line-height: 20px;
     }
 
     @keyframes increaseLineDown {

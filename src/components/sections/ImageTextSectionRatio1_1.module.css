@@ -1,3 +1,13 @@
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-35px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
 .imageTextSection {
     width: 100%;
     height: 100vh;
@@ -20,6 +30,13 @@
     max-width: 552px;
 }
 
+.imageHolderPhone {
+    width: 70%;
+    aspect-ratio: 4 / 3;
+    max-width: 552px;
+    display: none;
+}
+
 .textHolder {
     display: flex;
     flex-direction: column;
@@ -34,7 +51,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: 115%;
-    font-family: var(--font-FuturaDemiC);
 
     background: linear-gradient(263deg, #597EFF 12.97%, #FF58DC 85.7%);
     background-clip: text;
@@ -44,8 +60,58 @@
 
 @media screen and (max-width: 1150px) {
     .tableText {
-        width: 70%;
+        width: 85%;
         max-width: 480px;
         font-size: var(--section-h2);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-22px); }
+        100% { transform: translateY(0px); }
+    }
+    .imageTextSection {
+        padding-top: 20vh;
+    }
+
+    .tableCol2Ratio3_2 {
+        grid-template-columns: 1fr;
+    }
+
+    .textHolder {
+        gap: 35px;
+    }
+
+
+    .imageHolder {
+        display: none;
+    }
+
+    .imageHolderPhone {
+        display: block;
+    }
+    .tableText {
+        width: 90%;
+    }
+
+
+}
+
+@media screen and (max-width: 500px) {
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    .imageTextSection {
+        padding-top: 15vh;
+    }
+    .imageHolderPhone {
+        width: 70%;
+    }
+    .tableText {
+        font-size: var(--Computer-content-big);
     }
 }

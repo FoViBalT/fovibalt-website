@@ -8,6 +8,7 @@ import ImageTextSectionRatio1_1 from "../components/sections/ImageTextSectionRat
 import ImageListSectionRatio2_3 from "../components/sections/ImageListSectionRatio2_3";
 import SetUpSection from "../components/sections/SetUpSection";
 import ConnectorsSection from "../components/sections/ConnectorsSection";
+import SlideShowSection from "../components/sections/SlideShowSection";
 
 /*
 Components:
@@ -74,36 +75,36 @@ export default function Home() {
 
   const LEDStrips = [
     {
-      LEDStripImg: '/images/LEDStripTypeSK6812RGBW.png',
+      LEDStripImg: '/images/LED-strips/sk6812-rgbw.png',
       LEDStripType: 'SK6812 RGBW'
     },
     {
-      LEDStripImg: '/images/LEDStripTypeSK6812RGBW.png',
-      LEDStripType: 'SK6812 RGBW'
+      LEDStripImg: '/images/LED-strips/sk6812-rgb.png',
+      LEDStripType: 'SK6812 RGB'
     },
     {
-      LEDStripImg: '/images/LEDStripTypeSK6812RGBW.png',
-      LEDStripType: 'SK6812 RGBW'
+      LEDStripImg: '/images/LED-strips/ws2812-rgb.png',
+      LEDStripType: 'WS2812 RGB'
     },
     {
-      LEDStripImg: '/images/LEDStripTypeSK6812RGBW.png',
-      LEDStripType: 'SK6812 RGBW'
+      LEDStripImg: '/images/LED-strips/rgb-ww-cw.png',
+      LEDStripType: 'RGB WW CW'
     },
     {
-      LEDStripImg: '/images/LEDStripTypeSK6812RGBW.png',
-      LEDStripType: 'SK6812 RGBW'
+      LEDStripImg: '/images/LED-strips/rgbw.png',
+      LEDStripType: 'RGBW'
     },
     {
-      LEDStripImg: '/images/LEDStripTypeSK6812RGBW.png',
-      LEDStripType: 'SK6812 RGBW'
+      LEDStripImg: '/images/LED-strips/rgb.png',
+      LEDStripType: 'RGB'
     },
     {
-      LEDStripImg: '/images/LEDStripTypeSK6812RGBW.png',
-      LEDStripType: 'SK6812 RGBW'
+      LEDStripImg: '/images/LED-strips/ww-cw.png',
+      LEDStripType: 'WW CW'
     },
     {
-      LEDStripImg: '/images/LEDStripTypeSK6812RGBW.png',
-      LEDStripType: 'SK6812 RGBW'
+      LEDStripImg: '/images/LED-strips/ww.png',
+      LEDStripType: 'WW'
     },
   ];
 
@@ -121,6 +122,7 @@ export default function Home() {
       <ImageListSectionRatio2_3></ImageListSectionRatio2_3>
       <TextTable title="Reliability" tableContent={ReliabilityContent} numOfCols={2} colorful={false}></TextTable>
       <TextTable tableContent={AIandEffectStoreContent} numOfCols={1} colorful={true}></TextTable>
+      <SlideShowSection></SlideShowSection>
       <ImageTextSectionRatio1_1></ImageTextSectionRatio1_1>
     </main>
     </>

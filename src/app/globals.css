@@ -47,10 +47,20 @@
     }
 }
 
+@media screen and (max-width: 500px) {
+    :root {
+        --section-h1: 60px;
+        --section-h2: 48px;
+        --Computer-content-big: 30px;
+        --Computer-content-small: 18px;
+    }
+}
+
 body {
   background: var(--Background_1);
   color: var(--Text_1);
   width: calc(100vw - 10px);
+    overflow-x: hidden;
   /*color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -60,6 +70,12 @@ body {
     rgb(var(--background-start-rgb));*/
 }
 
+@media screen and (max-width: 768px) {
+    body {
+        width: 100vw;
+    }
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -67,15 +83,18 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--Background_1);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
+    background: var(--Accent_1);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+    background: white;
+
 }

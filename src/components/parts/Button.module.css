@@ -57,9 +57,10 @@ font-weight: 500;
 
 @media screen and (max-width: 1280px) {
     .buttonBig {
-         width: 200px;
-         height: 40px;
+         width: 205px;
+         height: 45px;
          padding: 5px 14px;
+        line-height: 20px;
     }
 }
 

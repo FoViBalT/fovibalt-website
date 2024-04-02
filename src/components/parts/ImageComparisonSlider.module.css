@@ -1,0 +1,51 @@
+.img_comp_container {
+    position: relative;
+    height: 100%; /*should be the same height as the images*/
+}
+
+.img_comp_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+
+.img_comp_img img {
+    display:block;
+    vertical-align:middle;
+    width: 100vw;
+
+    object-fit: none;
+    object-position: -100px;
+}
+
+.img_comp_slider {
+    position: absolute;
+    z-index:100;
+    cursor: ew-resize;
+    /*set the appearance of the slider:*/
+    width: 5px;
+    height: 100%;
+    background-color: var(--Accent_1);
+    opacity: 1;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 1439px) {
+    .img_comp_img img {
+        object-position: -700px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .heading {
+        width: 700px;
+    };
+}
+
+@media screen and (max-width: 768px) {
+    .heading {
+        width: 90%;
+        margin-top: calc(((100vh - 295px) / 2) - 60px);
+    };
+}
