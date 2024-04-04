@@ -155,10 +155,25 @@
 
     .tableCol2 {
         grid-template-columns: 1fr;
-        grid-row-gap: 40px;
+        grid-row-gap: 45px;
+        margin-top: 25px;
     }
+    .centerAlign {
+        width: 85%;
+        text-align: left;
+
+    }
+
     .leftAlign {
+        width: 85%;
+        text-align: left;
+    }
+    .colorful {
         text-align: center;
+    }
+
+    .text {
+        margin-top: 15px;
     }
 
 }
