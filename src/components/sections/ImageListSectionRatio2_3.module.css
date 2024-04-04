@@ -150,4 +150,7 @@
         position: relative;
         aspect-ratio: 570 / 1047;
     }
+    .listHeading {
+        font-size: var(--section-h2);
+    }
 }
