@@ -49,6 +49,7 @@
 .imageHolder {
     width: 80%;
     aspect-ratio: 720 / 1080;
+    z-index: -20;
 }
 
 .tableText {
