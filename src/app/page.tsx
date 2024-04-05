@@ -9,6 +9,7 @@ import ImageListSectionRatio2_3 from "../components/sections/ImageListSectionRat
 import SetUpSection from "../components/sections/SetUpSection";
 import ConnectorsSection from "../components/sections/ConnectorsSection";
 import SlideShowSection from "../components/sections/SlideShowSection";
+import DifferentEffectsSection from "@/components/sections/DifferentEffectsSection";
 
 /*
 Components:
@@ -118,6 +119,7 @@ export default function Home() {
       <SectionStairs LEDStrips={LEDStrips} ></SectionStairs>
       <ConnectorsSection></ConnectorsSection>
       <SetUpSection></SetUpSection>
+      <DifferentEffectsSection></DifferentEffectsSection>
       <TextTable title="Timer effect" tableContent={TimerEffectContent} numOfCols={2} colorful={false}></TextTable>
       <ImageListSectionRatio2_3></ImageListSectionRatio2_3>
       <TextTable title="Reliability" tableContent={ReliabilityContent} numOfCols={2} colorful={false}></TextTable>

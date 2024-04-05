@@ -1,0 +1,189 @@
+/*Styling for headers */
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide_in_from_button {
+    animation: slideInFromBottom 0.9s cubic-bezier(0.34, 0.35, 0.19, 1.23) 0.2s, fadeIn 0.6s cubic-bezier(0.76, 0.19, 0.29, 1.03) 0.2s forwards;
+}
+
+
+.topRow {
+    margin-top: 50px;
+    display: flex;
+width: 90%;
+    justify-content: space-between;
+}
+
+.bottomRow {
+    margin-top: 50px;
+    margin-left: 90px;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.imageTextSection {
+    width: 100%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.tableCol2Ratio3_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    max-width: 1385px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageHolder {
+    width: 45vw;
+    aspect-ratio: 300 / 449;
+    max-width: 552px;
+}
+
+.rotatedImage {
+    transform: rotate(-6deg);
+}
+
+.imageHolderPhone {
+    width: 70%;
+    aspect-ratio: 300 / 449;
+    max-width: 552px;
+    display: none;
+}
+
+.textHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.tableText {
+    width: 100%;
+    max-width: 840px;
+    text-align: left;
+    font-size: var(--Computer-content-big);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%;
+}
+
+.smallText {
+    margin-top: 10px;
+    text-shadow: 0px 0px 110px rgba(0, 0, 0, 0.5);
+    font-size: var(--Computer-content-small);
+    font-weight: 400;
+    line-height: 115%;
+}
+
+@media screen and (max-width: 1439px) {
+    .textHolder {
+        width: 90%;
+        align-items: flex-start;
+    }
+
+    .topRow {
+        margin-top: 40px;
+    }
+
+    .bottomRow {
+        margin-top: 40px;
+        margin-left: 50px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .tableText {
+        font-size: var(--section-h2);
+        width: 100%;
+    }
+    .smallText {
+        margin-top: 5px;
+    }
+    .topRow {
+        margin-top: 30px;
+    }
+    .bottomRow {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .textHolder {
+        width: 95%;
+    }
+    .tableText {
+        font-size: var(--Computer-content-big);
+        width: 100%;
+    }
+    .topRow {
+        margin-top: 15px;
+    }
+    .bottomRow {
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .tableCol2Ratio3_2 {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+    .tableText {
+        font-size: var(--section-h2);
+        width: 100%;
+    }
+    .textHolder {
+        gap: 35px;
+    }
+    .imageHolder {
+        display: none;
+    }
+    .tableText {
+        width: 90%;
+    }
+
+
+}
+
+@media screen and (max-width: 500px) {
+    .imageTextSection {
+        width: 100%;
+        padding-top: 5vh;
+        padding-bottom: 15vh;
+    }
+    .textHolder {
+        gap: 20px;
+    }
+    .tableText {
+        width: 100%;
+    }
+    .topRow {
+        margin-top: 0px;
+    }
+    .bottomRow {
+        margin-top: 0px;
+        margin-left: 10px;
+    }
+}

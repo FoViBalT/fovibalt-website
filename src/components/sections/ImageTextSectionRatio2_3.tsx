@@ -9,7 +9,7 @@ export default function ImageTextSectionRatio2_3() {
 
     const { ref, inView } = useInView({
         threshold: 0.3,
-        triggerOnce: false
+        triggerOnce: true
     });
     const MyImage = () => {
         return <Image

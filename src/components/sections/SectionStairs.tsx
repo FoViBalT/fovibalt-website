@@ -26,7 +26,7 @@ export default function SectionStairs({ LEDStrips }: { LEDStrips: SectionStairsP
 
     const [refH2, inViewH2, entry] = useInView({
         threshold: 0.9,
-        triggerOnce: false,
+        triggerOnce: true,
     });
 
     const [isAnimating, setIsAnimating] = useState(false);

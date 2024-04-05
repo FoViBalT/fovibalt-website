@@ -10,7 +10,7 @@ interface QuoteSectionProps {
 export default function QuoteSection({ text }: QuoteSectionProps) {
     const { ref, inView } = useInView({
         threshold: 0.5,
-        triggerOnce: false
+        triggerOnce: true
     });
 
     return (

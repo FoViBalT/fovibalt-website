@@ -44,13 +44,11 @@
 
 .heroH1 {
     text-align: center;
-    text-shadow: 0px 0px 50px #000;
+    text-shadow: 0px 0px 110px rgba(0, 0, 0, 0.5);
     font-size: var(--section-h1);
     font-style: normal;
     font-weight: 600;
     line-height: 115%;
-
-    font-family: var(--font-FuturaDemiC);
 
     background: var(--gradient-1);
     background-clip: text;

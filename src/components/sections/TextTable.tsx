@@ -17,7 +17,7 @@ interface TableText {
     colorful: boolean;
 }
 
-export default function QuoteSection({ title, tableContent, numOfCols, colorful }: TableText) {
+export default function TextTable({ title, tableContent, numOfCols, colorful }: TableText) {
 
     const [ref, inView] = useInView({
         threshold: 0.5,
@@ -26,7 +26,7 @@ export default function QuoteSection({ title, tableContent, numOfCols, colorful 
 
     const [refH2, inViewH2, entry] = useInView({
         threshold: 0.9,
-        triggerOnce: false,
+        triggerOnce: true,
     });
 
     const [isAnimating, setIsAnimating] = useState(false);

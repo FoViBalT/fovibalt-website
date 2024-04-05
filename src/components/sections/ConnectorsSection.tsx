@@ -42,16 +42,21 @@ export default function ConnectorsSection() {
 
             const frameCount = 19;
             const additionalFrames = 11;
-            const buffer = window.innerHeight * 0.3;
+            const buffer = window.innerHeight * 0.5;
             const currentFrame = (index: number) => (
                 `/images/connectors/connectors_${index.toString().padStart(4, '0')}.png`
             )
 
             const preloadImages = () => {
                 if (image.current) {
+                    let images: HTMLImageElement[] = [];
                     for (let i = 1; i < frameCount; i++) {
-                        image.current.src = currentFrame(i);
+                        const img = new window.Image();
+                        img.src = currentFrame(i);
+                        images.push(img);
+                        console.log('preload', i)
                     }
+                    images = []
                 }
             };
 
@@ -206,7 +211,7 @@ export default function ConnectorsSection() {
                         changeEffect(2)
                         changeEffect(0)
                         changeEffect(6)
-                    } else if (containerScrollPercent <= 0.9) {
+                    } else if (containerScrollPercent <= 1) {
                         changeEffect(0)
                         changeEffect(3)
                         changeEffect(5)

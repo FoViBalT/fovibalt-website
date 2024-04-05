@@ -29,9 +29,14 @@ export default function SetUpSection() {
 
             const preloadImages = () => {
                 if (image.current) {
+                    let images: HTMLImageElement[] = [];
                     for (let i = 1; i < frameCount; i++) {
-                        image.current.src = currentFrame(i);
+                        const img = new window.Image();
+                        img.src = currentFrame(i);
+                        images.push(img);
+                        console.log('preload', i)
                     }
+                    images = []
                 }
             };
 
