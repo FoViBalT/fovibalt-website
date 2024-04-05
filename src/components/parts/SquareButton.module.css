@@ -1,0 +1,88 @@
+.squareButton {
+    width: 117px;
+    height: 117px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    background: #262626;
+    /* website image */
+    box-shadow: 0 0 75px 0 rgba(0, 0, 0, 0.50), 0px 4px 60px 0px rgba(0, 0, 0, 0.30) inset;
+}
+
+.iconBlue {
+    color: var(--Accent_1);
+    font-size: 55px!important;
+}
+.iconBlack {
+    color: black;
+    font-size: 55px!important;
+}
+
+@media screen and (max-width: 1439px) {
+    .squareButton {
+        width: 105px;
+        height: 105px;
+    }
+    .iconBlue {
+        font-size: 50px!important;
+    }
+    .iconBlack {
+        font-size: 50px!important;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .squareButton {
+        width: 90px;
+        height: 90px;
+    }
+    .iconBlue {
+        font-size: 40px!important;
+    }
+    .iconBlack {
+        font-size: 40px!important;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .squareButton {
+        width: 75px;
+        height: 75px;
+        border-radius: 10px;
+    }
+    .iconBlue {
+        font-size: 30px!important;
+    }
+    .iconBlack {
+        font-size: 30px!important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .squareButton {
+        width: 90px;
+        height: 90px;
+    }
+    .iconBlue {
+        font-size: 40px!important;
+    }
+    .iconBlack {
+        font-size: 40px!important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .squareButton {
+        width: 60px;
+        height: 60px;
+    }
+    .iconBlue {
+        font-size: 25px!important;
+    }
+    .iconBlack {
+        font-size: 25px!important;
+    }
+}
