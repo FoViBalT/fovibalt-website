@@ -4,13 +4,11 @@ import styles from "./DifferentEffectsSection.module.css";
 import {useInView} from "react-intersection-observer";
 import RadialGradientHighlight from "../parts/RadialGradientHighlight";
 import Image from "next/image";
-import SquareButton from "@/components/parts/squareButton";
-import {useEffect, useState} from "react";
-import {debounce} from "next/dist/server/utils";
+import SquareButton from "@/components/parts/SquareButton";
 
 export default function DifferentEffectsSection() {
 
-    const [refH2, inViewH2, entry] = useInView({
+    const [refH2, inViewH2] = useInView({
         threshold: 0.9,
         triggerOnce: true,
     });
