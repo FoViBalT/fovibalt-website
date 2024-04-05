@@ -1,4 +1,4 @@
-FROM node:18-alpine AS base
+FROM node:lts-alpine3.19 AS base
 
 # Install dependencies only when needed
 FROM base AS deps
