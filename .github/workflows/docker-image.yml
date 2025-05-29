@@ -41,6 +41,6 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-      - name: Tell Docker to download latest server file
-        run: |
-          curl -H "Authorization: Bearer utkds95D%$f4f" 46.23.46.36:8080/v1/update
+      # - name: Tell Docker to download latest server file
+      #   run: |
+      #     curl -H "Authorization: Bearer utkds95D%$f4f" 46.23.46.36:8080/v1/update
