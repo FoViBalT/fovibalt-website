@@ -1,0 +1,140 @@
+.header {
+    display: flex;
+    width: 100%;
+    height: var(--header-height);
+    padding: 0 var(--content-gutter);
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--Text_1);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.logoIcon {
+    font-size: 28px;
+    background: var(--gradient-1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navLink {
+    display: flex;
+    padding: 8px 18px;
+    border-radius: 8px;
+    color: rgba(237, 240, 255, 0.7);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.navLink:hover {
+    color: var(--Text_1);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.navLinkActive {
+    color: var(--Text_1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.ctaButton {
+    display: flex;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: var(--gradient-1);
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.ctaButton:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--Text_1);
+    font-size: 28px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.mobileNav {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .mobileMenuBtn {
+        display: block;
+    }
+
+    .mobileNav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: rgba(26, 26, 26, 0.97);
+        backdrop-filter: blur(20px);
+        padding: 16px var(--content-gutter);
+        gap: 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        z-index: 9998;
+    }
+
+    .mobileNav .navLink {
+        padding: 12px 16px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .mobileNav .ctaButton {
+        margin-top: 8px;
+        padding: 12px 16px;
+        font-size: 16px;
+        justify-content: center;
+    }
+
+    .mobileNavHidden {
+        display: none;
+    }
+}
