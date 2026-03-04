@@ -6,25 +6,16 @@ interface ControllerRotationProps {
     className?: string;
 }
 
-const connectorInfo = [
-    { key: 'mr30', label: 'MR-30 LED Output', range: [0, 3] as const, color: 'rgba(89,126,255,0.25)' },
-    { key: 'rgbw', label: '6-Pin RGB WW CW', range: [4, 7] as const, color: 'rgba(155,89,255,0.25)' },
-    { key: 'usb', label: 'USB-C 5A Input', range: [8, 11] as const, color: 'rgba(89,126,255,0.28)' },
-    { key: 'barrel', label: 'Barrel Jack 7A', range: [12, 15] as const, color: 'rgba(255,88,220,0.23)' },
-    { key: 'screw', label: 'Screw Terminal 20A', range: [16, 18] as const, color: 'rgba(255,88,220,0.28)' },
-];
-
 /**
  * Wheel-locked controller showcase using the 19-frame connectors image sequence.
  * While pointer is over the component, wheel scroll is consumed to scrub frames,
- * preventing page scroll and showing connector highlights.
+ * preventing page scroll.
  */
 export default function ControllerRotation({ className }: ControllerRotationProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const framesRef = useRef<HTMLImageElement[]>([]);
     const [loaded, setLoaded] = useState(false);
-    const [currentFrame, setCurrentFrame] = useState(0);
     const currentFrameRef = useRef(0);
     const wheelBufferRef = useRef(0);
     const raf = useRef<number>(0);
@@ -67,7 +58,6 @@ export default function ControllerRotation({ className }: ControllerRotationProp
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0);
         currentFrameRef.current = index;
-        setCurrentFrame(index);
     };
 
     // Wheel-driven frame scrubbing with page scroll lock over component
@@ -105,10 +95,6 @@ export default function ControllerRotation({ className }: ControllerRotationProp
         if (!loaded) return;
         drawFrame(0);
     }, [loaded]);
-
-    const activeConnector = connectorInfo.find(
-        (item) => currentFrame >= item.range[0] && currentFrame <= item.range[1]
-    ) ?? connectorInfo[0];
 
     return (
         <div
@@ -168,65 +154,7 @@ export default function ControllerRotation({ className }: ControllerRotationProp
                             color: 'var(--Text_2)',
                         }}
                     >
-                        Scroll over image to rotate connectors ({currentFrame + 1}/{TOTAL_FRAMES})
-                    </div>
-
-                    <div
-                        style={{
-                            position: 'absolute',
-                            bottom: '12px',
-                            left: '12px',
-                            right: '12px',
-                            zIndex: 3,
-                            display: 'grid',
-                            gridTemplateColumns: '1fr',
-                            gap: '8px',
-                        }}
-                    >
-                        <div
-                            style={{
-                                padding: '8px 10px',
-                                borderRadius: '10px',
-                                background: activeConnector.color,
-                                border: '1px solid rgba(255,255,255,0.22)',
-                                color: 'var(--Text_1)',
-                                fontFamily: "'Open Sans', sans-serif",
-                                fontSize: '12px',
-                                fontWeight: 700,
-                            }}
-                        >
-                            Active connector: {activeConnector.label}
-                        </div>
-
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexWrap: 'wrap',
-                                gap: '6px',
-                            }}
-                        >
-                            {connectorInfo.map((item) => {
-                                const isActive = item.key === activeConnector.key;
-                                return (
-                                    <span
-                                        key={item.key}
-                                        style={{
-                                            fontFamily: "'Open Sans', sans-serif",
-                                            fontSize: '11px',
-                                            padding: '5px 8px',
-                                            borderRadius: '999px',
-                                            border: isActive
-                                                ? '1px solid rgba(255,255,255,0.45)'
-                                                : '1px solid rgba(255,255,255,0.12)',
-                                            background: isActive ? item.color : 'rgba(17,17,24,0.62)',
-                                            color: isActive ? 'var(--Text_1)' : 'var(--Text_2)',
-                                        }}
-                                    >
-                                        {item.label}
-                                    </span>
-                                );
-                            })}
-                        </div>
+                            Scroll over model to rotate
                     </div>
                 </>
             )}
