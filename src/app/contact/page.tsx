@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
 import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import TiltCard from '@/components/effects/TiltCard';
+import ContactForm from '@/components/parts/ContactForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -39,27 +39,7 @@ export default function ContactPage() {
                     <div className={styles.twoColGrid}>
                         <div>
                             <h2 className={`${styles.sectionHeading} ${styles.sectionHeadingGradient}`}>Get in touch</h2>
-                            <form className={styles.contactForm}>
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="name">Name</label>
-                                    <input type="text" id="name" placeholder="Your name" />
-                                </div>
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="email">Email</label>
-                                    <input type="email" id="email" placeholder="your@email.com" />
-                                </div>
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="subject">Subject</label>
-                                    <input type="text" id="subject" placeholder="What is this about?" />
-                                </div>
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="message">Message</label>
-                                    <textarea id="message" placeholder="Tell us more..."></textarea>
-                                </div>
-                                <button type="submit" className={styles.ctaBtn} style={{ border: 'none' }}>
-                                    Send message
-                                </button>
-                            </form>
+                            <ContactForm />
                         </div>
                         <div>
                             <h2 className={styles.sectionHeading}>Other ways to reach us</h2>

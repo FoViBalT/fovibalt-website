@@ -221,6 +221,12 @@
     transform: translateY(-2px);
 }
 
+.ctaBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .ctaBtnOutline {
     display: inline-flex;
     padding: 14px 36px;
@@ -542,6 +548,21 @@
 .formGroup textarea {
     min-height: 120px;
     resize: vertical;
+}
+
+.formStatus {
+    margin-top: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--small-text);
+    line-height: 1.5;
+}
+
+.formStatusSuccess {
+    color: #4ade80;
+}
+
+.formStatusError {
+    color: #f87171;
 }
 
 /* Team grid */
