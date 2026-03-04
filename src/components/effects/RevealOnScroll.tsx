@@ -24,6 +24,7 @@ export default function RevealOnScroll({
 }: RevealOnScrollProps) {
     const ref = useRef<HTMLDivElement>(null);
     const [revealed, setRevealed] = useState(false);
+    const transitionDelayMs = revealed ? `${delay}ms` : '0ms';
 
     useEffect(() => {
         const el = ref.current;
@@ -68,8 +69,7 @@ export default function RevealOnScroll({
             className={`reveal-on-scroll ${revealed ? 'revealed' : ''} ${className}`}
             style={{
                 ...(revealed ? {} : variantMap[variant]),
-                transitionDelay: revealed ? `${delay}ms` : '0ms',
-                transition: `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)`,
+                transition: `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${transitionDelayMs}, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${transitionDelayMs}`,
                 willChange: 'opacity, transform',
             }}
         >
