@@ -39,42 +39,32 @@ export default function RoadmapPage() {
 
     const upcoming = [
         {
-            date: 'In Progress',
-            title: 'Prototype finalization',
-            desc: 'Resolving remaining hardware issues and preparing the design for manufacturing. Estimated budget: €900.',
-        },
-        {
-            date: 'Q2 2026',
-            title: 'Marketing launch',
-            desc: 'Starting outreach to spread awareness about fovilight and validate market demand. Estimated budget: €1000.',
-        },
-        {
-            date: 'Q2 2026',
+            date: 'Planned',
             title: 'Web development completion',
-            desc: 'Final web platform features and integration with a dedicated designer. Estimated budget: €900.',
+            desc: 'Final web platform features and tighter integration across app, dashboard, and device management.',
         },
         {
-            date: 'Q3 2026',
+            date: 'Planned',
             title: 'Scene support',
             desc: 'Scenes can be assigned to grouped controllers to create atmosphere – every controller lights with different colors based on the scene.',
         },
         {
-            date: 'Q3 2026',
+            date: 'Planned',
             title: 'LED strip splitting',
             desc: 'A single LED strip can be split into multiple sections for independent control of each segment.',
         },
         {
-            date: 'Q4 2026',
+            date: 'Planned',
             title: 'Effect Store launch',
             desc: 'Public marketplace where users can share, download, and rate custom lighting effects and plugins.',
         },
         {
-            date: 'Q4 2026',
+            date: 'Planned',
             title: 'Sensor expansion',
             desc: 'Support for connecting various sensors to automate lighting based on motion, ambient light, temperature, and more.',
         },
         {
-            date: '2027',
+            date: 'Planned',
             title: 'Mass production',
             desc: 'Transition from prototype to mass manufacturing and retail distribution.',
         },
@@ -194,24 +184,23 @@ export default function RoadmapPage() {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                                 <div className={styles.specItem}>
                                     <i className="material-icons">build</i>
-                                    <span><strong>Prototype finalization</strong> – Resolving final issues and preparing for manufacturing (€900)</span>
+                                    <span><strong>Manufacturing</strong> – Hardware production readiness, QA flow, and supply chain execution.</span>
                                 </div>
                                 <div className={styles.specItem}>
                                     <i className="material-icons">campaign</i>
-                                    <span><strong>Marketing launch</strong> – Building awareness and validating demand (€1,000)</span>
+                                    <span><strong>Awareness spreding</strong> – Community growth, product visibility, and adoption.</span>
                                 </div>
                                 <div className={styles.specItem}>
                                     <i className="material-icons">web</i>
-                                    <span><strong>Web development</strong> – Final platform features with professional design (€900)</span>
+                                    <span><strong>Infrastructure development</strong> – Dashboard, cloud services, and operational tooling.</span>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <h2 className={styles.sectionHeading}>Market opportunity</h2>
                             <p className={styles.sectionSubtext}>
-                                Based on market data and forecasts, the LED lighting market will double by 2030.
-                                In a survey of 200 people, 40% wanted to purchase LED lighting and 30% expressed
-                                interest in buying our device specifically.
+                                The LED lighting category keeps expanding as more users move to connected and customizable setups.
+                                Demand for universal, reliable controllers continues to grow across consumer and enthusiast segments.
                             </p>
                             <br />
                             <p className={styles.sectionSubtext}>

@@ -10,7 +10,7 @@ export default function SetupPage() {
             <section className={styles.pageHero}>
                 <h1 className={styles.pageTitle}>3 Step Setup</h1>
                 <p className={styles.pageSubtitle}>
-                    Get your fovilight up and running in minutes. No technical knowledge required – just connect, scan, and enjoy.
+                    Get your fovilight up and running in minutes. No technical knowledge required – just connect, select device, and enjoy.
                 </p>
             </section>
             </RevealOnScroll>
@@ -24,10 +24,11 @@ export default function SetupPage() {
                         <div className={styles.step}>
                             <div>
                                 <div className={styles.stepNumber}>01</div>
-                                <h3 className={styles.stepTitle}>Connect LED strip and power</h3>
+                                <h3 className={styles.stepTitle}>Connect</h3>
                                 <p className={styles.stepDesc}>
                                     Connect your LED strip to the fovilight controller using the appropriate connector –
-                                    MR-30 for addressable strips or the 6-pin connector for RGBW strips. Then connect your
+                                    industry standard 5.08 modular terminal block for addressable strips or the 6-pin
+                                    industry standard 5.08 modular terminal block for RGB/RGBW/White/CWWW strips. Then connect your
                                     power supply via USB-C, barrel jack, or screw terminal.
                                 </p>
                                 <br />
@@ -46,20 +47,19 @@ export default function SetupPage() {
                         <div className={`${styles.step} ${styles.stepReverse}`}>
                             <div>
                                 <div className={styles.stepNumber}>02</div>
-                                <h3 className={styles.stepTitle}>Scan QR-code on fovilight</h3>
+                                <h3 className={styles.stepTitle}>Select device and connect to Wi-Fi</h3>
                                 <p className={styles.stepDesc}>
-                                    Each fovilight has a unique QR code printed on it. Open the Fovilight mobile app and scan
-                                    the QR code to instantly pair with your controller.
+                                    Open the fovilight mobile app, choose your controller from the list of available BLE devices,
+                                    and start setup instantly.
                                 </p>
                                 <br />
                                 <p className={styles.stepDesc}>
-                                    The QR code contains the device identifier and connection details. You can scan multiple
-                                    controllers to add them all to your app at once.
+                                    After selecting the controller, choose your Wi-Fi network in the app and complete the connection.
                                 </p>
                             </div>
                             <div className={styles.imagePlaceholder}>
-                                <i className="material-icons">qr_code_scanner</i>
-                                Phone camera scanning QR code on fovilight device – QR code shows fovibalt.com, device name, date, and MAC address
+                                <i className="material-icons">bluetooth_searching</i>
+                                Phone app showing available fovilight devices over BLE with one selected for Wi-Fi provisioning
                             </div>
                         </div>
 
@@ -67,15 +67,14 @@ export default function SetupPage() {
                         <div className={styles.step}>
                             <div>
                                 <div className={styles.stepNumber}>03</div>
-                                <h3 className={styles.stepTitle}>Connect to home Wi-Fi</h3>
+                                <h3 className={styles.stepTitle}>Enjoy</h3>
                                 <p className={styles.stepDesc}>
                                     Enter your home Wi-Fi network name and password in the app. The fovilight controller
                                     connects to your network and is ready to use!
                                 </p>
                                 <br />
                                 <p className={styles.stepDesc}>
-                                    Once connected, you can control your lighting from anywhere in the world through the app
-                                    or web interface. Enjoy powerful, intelligent lighting!
+                                    Once connected you can control your light localy, or optionaly from anywhere in the world.
                                 </p>
                             </div>
                             <div className={styles.imagePlaceholder}>
@@ -146,17 +145,17 @@ export default function SetupPage() {
                             <div className={styles.specsList}>
                                 <div className={styles.specItem}>
                                     <i className="material-icons">cable</i>
-                                    <span>MR-30 connector for addressable LED strip</span>
+                                    <span>Industry standard 5.08 modular terminal block for addressable strips</span>
                                 </div>
                                 <div className={styles.specItem}>
                                     <i className="material-icons">settings_ethernet</i>
-                                    <span>6 pin connector for RGB WW CW strips</span>
+                                    <span>6-pin industry standard 5.08 modular terminal block for RGB/RGBW/White/CWWW strips</span>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.imagePlaceholder}>
                             <i className="material-icons">cable</i>
-                            Side view of fovilight showing both LED output connectors – MR-30 three-pin connector labeled for addressable strips, 6-pin header labeled for RGBW strips
+                            Side view of fovilight showing both LED output connectors – 5.08 modular terminal blocks for addressable and RGB/RGBW/White/CWWW strips
                         </div>
                     </div>
                 </div>

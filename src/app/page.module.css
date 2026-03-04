@@ -169,6 +169,14 @@
     color: var(--Text_2);
 }
 
+.statsNote {
+    margin-top: 12px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(237, 240, 255, 0.55);
+}
+
 .statDivider {
     width: 1px;
     height: 40px;
@@ -219,7 +227,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* ===== PRODUCT INFO (QR/Description) ===== */
+/* ===== PRODUCT INFO (BLE/Description) ===== */
 .productInfo {
     padding: 80px var(--content-gutter) var(--section-padding);
 }
@@ -503,6 +511,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    height: 100%;
     transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
     cursor: default;
 }
@@ -535,6 +544,8 @@
 .featureCardTitle {
     font-size: var(--Computer-content-small);
     font-weight: 600;
+    min-height: 2.7em;
+    line-height: 1.35;
 }
 
 .featureCardDesc {
@@ -542,6 +553,7 @@
     font-size: var(--small-text);
     color: var(--Text_2);
     line-height: 1.6;
+    flex: 1;
 }
 
 /* ===== RELIABILITY ===== */
@@ -708,13 +720,32 @@
         gap: 40px;
     }
 
-    .heroImageWrapper {
-        max-width: 320px;
-        margin: 0 auto;
+    /* ---- Point 1: center hero content on mobile ---- */
+    .heroContent {
+        align-items: center;
+        text-align: center;
+    }
+
+    .heroH1 {
+        text-align: center;
+    }
+
+    .heroSubtitle {
+        text-align: center;
     }
 
     .heroFeatures {
         grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .heroCta {
+        align-self: center;
+    }
+
+    .heroImageWrapper {
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .statsBar {
@@ -736,14 +767,36 @@
         display: none;
     }
 
+    /* ---- Point 5 & 7: tighten quote → productInfo gap ---- */
+    .quoteSection {
+        padding-top: 60px;
+        padding-bottom: 24px;
+    }
+
+    .productInfo {
+        padding-top: 24px;
+    }
+
     .productInfoInner {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .qrImageWrapper {
-        max-width: 240px;
+        max-width: none;
+        width: 100%;
         margin: 0 auto;
+    }
+
+    /* ---- Point 7: tighten explore & features spacing ---- */
+    .exploreSection {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .featureRow {
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     .featureRowInner {
@@ -755,9 +808,33 @@
         direction: ltr;
     }
 
+    .featuresHighlight {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .featuresHighlightHeading {
+        margin-bottom: 36px;
+    }
+
+    .bundlesSection {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .bundlesHeading {
+        margin-bottom: 36px;
+    }
+
     .bundlesGrid {
         grid-template-columns: 1fr;
         max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .reliabilitySection {
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 
     .featuresGrid {
@@ -768,6 +845,10 @@
         grid-template-columns: 1fr;
     }
 
+    .ctaBanner {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 }
 
 @media screen and (max-width: 500px) {

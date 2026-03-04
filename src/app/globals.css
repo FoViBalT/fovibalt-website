@@ -78,11 +78,15 @@
   padding: 0;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   background: var(--Background_1);
   color: var(--Text_1);
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
 }
@@ -154,6 +158,7 @@ img {
   position: relative;
   z-index: 1;
   padding-top: var(--header-height);
+  overflow-x: clip;
 }
 
 /* ===== GLOBAL ANIMATIONS ===== */

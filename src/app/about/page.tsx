@@ -5,10 +5,8 @@ import TiltCard from '@/components/effects/TiltCard';
 
 export default function AboutPage() {
     const team = [
-        { name: 'Nikita', role: 'Hardware & Firmware Engineer', initial: 'N' },
-        { name: 'Vlad', role: 'Business & Strategy', initial: 'V' },
-        { name: 'Developer', role: 'Software Engineer', initial: 'D' },
-        { name: 'Designer', role: 'UI/UX & Web Design', initial: 'D' },
+        { name: 'Nikita', role: 'Hardware, firmware, software, and product', initial: 'N' },
+        { name: 'Vlad', role: 'Hardware, firmware, software, and product', initial: 'V' },
     ];
 
     return (
@@ -32,27 +30,26 @@ export default function AboutPage() {
                         <div>
                             <h2 className={`${styles.sectionHeading} ${styles.sectionHeadingGradient}`}>Our Mission</h2>
                             <p className={styles.sectionSubtext}>
-                                LED lighting is an easy way to make any space more beautiful. With LED strips you can illuminate
-                                room ceilings, kitchen counters, gaming desks, and even bathrooms. But the reality is that each
-                                use case requires a specific LED strip type and a specific controller.
+                                We build lighting control that is easy to adopt in real spaces — from desks and gaming rooms
+                                to kitchens and full-room installations. LED strips are flexible, but choosing and configuring
+                                controllers is usually not.
                             </p>
                             <br />
                             <p className={styles.sectionSubtext}>
-                                This creates connection problems – each controller has its own app, its own compatible strips,
-                                and its own limitations. We set out to solve this with one universal device.
+                                Our goal is one controller that removes compatibility friction and gives people a consistent
+                                experience across different strip types and brands.
                             </p>
                         </div>
                         <div>
                             <h2 className={styles.sectionHeading}>The Problem We Solve</h2>
                             <p className={styles.sectionSubtext}>
-                                To light up a desk you might use a simple controller. But for ceiling or room illumination you
-                                need specialized devices. Each with different apps and different compatible strips.
+                                Most setups still force users into brand-specific ecosystems with separate apps, different
+                                connection flows, and hardware limitations.
                             </p>
                             <br />
                             <p className={styles.sectionSubtext}>
-                                Fovilight works with any LED strip from any manufacturer, automatically detects strip parameters
-                                with LedID™ technology, and gives you AI-powered effects, grouping, and web control – all from
-                                one intuitive app.
+                                Fovilight unifies this: universal strip support, LedID™ auto-detection, AI effects, scripting,
+                                and local-first control in one intuitive platform.
                             </p>
                         </div>
                     </div>
@@ -111,8 +108,7 @@ export default function AboutPage() {
                         The Fovibalt Team
                     </h2>
                     <p className={`${styles.sectionSubtext} ${styles.sectionSubtextCenter}`}>
-                        A team of students with diverse specializations, united by the goal of revolutionizing LED lighting.
-                        We&apos;re actively looking for a marketing specialist to join us.
+                        Nikita and Vlad build and run everything across hardware, firmware, software, and product direction.
                     </p>
                     <div className={styles.teamGrid}>
                         {team.map((member) => (

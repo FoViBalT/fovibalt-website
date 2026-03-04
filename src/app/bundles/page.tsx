@@ -10,8 +10,8 @@ export default function BundlesPage() {
             desc: 'Perfect if you already have LED strips and a power supply. Just swap your old controller for fovilight.',
             features: [
                 'Fovilight controller',
-                'MR-30 connector cable',
-                '6-pin RGBW connector cable',
+                'Industry standard 5.08 modular terminal block connector cable',
+                '6-pin industry standard 5.08 modular terminal block connector cable',
                 'Different clamps to connect LED strip',
                 'Quick start guide',
             ],
@@ -24,32 +24,26 @@ export default function BundlesPage() {
             desc: 'Everything you need to get started with quality addressable LED lighting right out of the box.',
             features: [
                 'Fovilight controller',
-                '5v SK6812 5v LED strip (3m)',
-                '5v power supply',
-                'MR-30 connector cable',
+                '12v ws2815 5m LED strip',
+                '12v power supply',
                 'Different clamps to connect LED strip',
-                'Quick start guide',
             ],
             idealFor: 'First-time LED users who want a complete solution',
             icon: 'inventory_2',
-            imagePlaceholder: 'Starter kit box contents laid out – controller, coiled SK6812 LED strip, 5v adapter, cables, and guide arranged on dark surface',
+            imagePlaceholder: 'Starter kit box contents laid out – controller, 12v ws2815 5m LED strip, 12v adapter, and clamps arranged on dark surface',
         },
         {
             name: 'Pro kit',
             desc: 'The premium package for demanding installations with 10 meters of high-quality 12V LED strip.',
             features: [
                 'Fovilight controller',
-                '10m ws2815 12v LED strip',
+                '10m Apa102 12v LED strip',
                 '12v power supply',
-                'MR-30 connector cable',
-                '6-pin RGBW connector cable',
                 'Different clamps to connect LED strip',
-                'Extension cables',
-                'Quick start guide',
             ],
             idealFor: 'Whole-room installations, professional setups, enthusiasts',
             icon: 'star',
-            imagePlaceholder: 'Pro kit premium box contents – controller, 10m ws2815 LED strip reel, 12v power supply, premium accessories, all on dark surface',
+            imagePlaceholder: 'Pro kit premium box contents – controller, 10m Apa102 12v LED strip reel, 12v power supply, and premium clamps on dark surface',
         },
     ];
 
@@ -102,6 +96,7 @@ export default function BundlesPage() {
                                         }}>
                                             Ideal for: {bundle.idealFor}
                                         </p>
+                                        <button type="button" className={styles.bundleBuyBtn}>Buy</button>
                                     </div>
                                     <div className={styles.imagePlaceholder}>
                                         <i className="material-icons">{bundle.icon}</i>
@@ -142,13 +137,13 @@ export default function BundlesPage() {
                                 <tr>
                                     <td><i className="material-icons" style={{ fontSize: '18px', color: 'var(--Accent_1)' }}>light</i> LED strip</td>
                                     <td><i className={`material-icons ${styles.crossIcon}`}>cancel</i></td>
-                                    <td>5v SK6812 3m</td>
-                                    <td className={styles.highlightCell}>12v WS2815 10m</td>
+                                    <td>12v WS2815 5m</td>
+                                    <td className={styles.highlightCell}>10m APA102 12v</td>
                                 </tr>
                                 <tr>
                                     <td><i className="material-icons" style={{ fontSize: '18px', color: 'var(--Accent_1)' }}>power</i> Power supply</td>
                                     <td><i className={`material-icons ${styles.crossIcon}`}>cancel</i></td>
-                                    <td>5v adapter</td>
+                                    <td>12v adapter</td>
                                     <td className={styles.highlightCell}>12v adapter</td>
                                 </tr>
                                 <tr>
@@ -172,14 +167,14 @@ export default function BundlesPage() {
                         <div>
                             <h2 className={`${styles.sectionHeading} ${styles.sectionHeadingGradient}`}>On-the-go use</h2>
                             <p className={styles.sectionSubtext}>
-                                All bundles support portable use. Connect a power bank via USB-C, and fovilight
-                                creates its own Wi-Fi hotspot – perfect for events, camping, concerts, or anywhere
+                                All bundles support portable use. Connect a power bank via USB-C, and control locally
+                                over BLE – perfect for events, camping, concerts, or anywhere
                                 without a power outlet.
                             </p>
                         </div>
                         <div className={styles.imagePlaceholder}>
                             <i className="material-icons">battery_charging_full</i>
-                            Fovilight connected to a power bank outdoors – LED strip glowing in a tent or outdoor setting, phone showing the app via hotspot connection
+                            Fovilight connected to a power bank outdoors – LED strip glowing in a tent or outdoor setting, phone controlling it over BLE
                         </div>
                     </div>
                 </div>

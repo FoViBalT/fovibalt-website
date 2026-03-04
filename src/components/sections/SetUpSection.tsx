@@ -118,7 +118,7 @@ export default function SetUpSection() {
     return (
         <section ref={container} className={styles.sectionWrapper}>
             <div className={styles.sticky}>
-                <h3 className={styles.title}>4 step setup & configuration</h3>
+                <h3 className={styles.title}>3 step setup & configuration</h3>
                 <div className={styles.twoColumnContainer}>
                         <div className={styles.imageHolder}>
                             <Image
@@ -137,10 +137,10 @@ export default function SetUpSection() {
                             </Image>
                         </div>
                         <div className={styles.textHolder}>
-                            <p ref={text1} className={`${styles.text} ${styles.fade_out}`}>Step 1: Connect LED strip lighting with fovicable to fovilight</p>
-                            <p ref={text2} className={`${styles.text} ${styles.fade_out}`}>Step 2: Fovilight detects LED type and LED count of connected LED strip</p>
-                            <p ref={text3} className={`${styles.text} ${styles.fade_out}`}>Step 3: Scan QR-code on all your fovilights</p>
-                            <p ref={text4} className={`${styles.text} ${styles.fade_out}`}>Step 4: Enter SSID and password of your router and press connect all</p>
+                            <p ref={text1} className={`${styles.text} ${styles.fade_out}`}>Step 1: Connect LED strip and power</p>
+                            <p ref={text2} className={`${styles.text} ${styles.fade_out}`}>Step 2: Select your device in the app over BLE and connect to Wi-Fi</p>
+                            <p ref={text3} className={`${styles.text} ${styles.fade_out}`}>Step 3: Enjoy local-first intelligent lighting</p>
+                            <p ref={text4} className={`${styles.text} ${styles.fade_out}`}>Optional remote access is available after setup</p>
                         </div>
                 </div>
             </div>

@@ -4,8 +4,9 @@ import RevealOnScroll from '@/components/effects/RevealOnScroll';
 
 export default function TechnologyPage() {
     const ledStripTypes = [
-        'SK6812 RGBW', 'SK6812 RGB', 'WS2812 RGB', 'WS2815 RGB',
-        'WS2811', 'APA102', 'RGB WW CW', 'RGBW', 'RGB', 'WW CW', 'WW', 'CW',
+        'WS2811', 'WS2812', 'WS2812B', 'WS2813', 'WS2814', 'WS2815', 'WS2818', 'WS2801',
+        'SK6812', 'SK6812 RGB', 'SK6812 RGBW', 'SK6812 MINI', 'SK6812 MINI-E', 'SK9822',
+        'APA102', 'APA102C', 'HD107S', 'RGB', 'RGBW', 'RGB WW CW', 'WW CW', 'WW', 'CW',
     ];
 
     return (
@@ -32,7 +33,7 @@ export default function TechnologyPage() {
                             <p className={styles.sectionSubtext}>
                                 LedID is our proprietary technology that enables the fovilight controller to automatically identify
                                 connected LED strips. It detects the communication protocol, strip length, number of LEDs, and
-                                fault conditions — all within seconds of connection.
+                                fault conditions — all within seconds.
                             </p>
                             <br />
                             <p className={styles.sectionSubtext}>
@@ -49,14 +50,14 @@ export default function TechnologyPage() {
             </section>
             </RevealOnScroll>
 
-            {/* Multi-protocol support */}
+            {/* LED type support */}
             <RevealOnScroll variant="fadeUp">
             <section className={`${styles.sectionPadding} ${styles.sectionAlt}`}>
                 <div className={styles.container}>
-                    <h2 className={styles.sectionHeading}>Multi-Protocol LED Strip Support</h2>
+                    <h2 className={styles.sectionHeading}>20+ Different LED Types Supported</h2>
                     <p className={`${styles.sectionSubtext} ${styles.sectionSubtextCenter}`}>
-                        Fovilight communicates with different LED strips from different manufacturers using
-                        a wide range of protocols. No more vendor lock-in.
+                        Fovilight supports WS and SK families alongside other popular addressable and analog LED strips.
+                        No vendor lock-in.
                     </p>
                     <div className={styles.stripTypesList}>
                         {ledStripTypes.map((type) => (
@@ -93,7 +94,7 @@ export default function TechnologyPage() {
                                 </div>
                                 <div className={styles.specItem}>
                                     <i className="material-icons">bolt</i>
-                                    <span>5–12V voltage range, up to 100W delivery</span>
+                                    <span>5–24V voltage range, up to 20A</span>
                                 </div>
                             </div>
                         </div>
@@ -121,17 +122,17 @@ export default function TechnologyPage() {
                             <div className={styles.specsList}>
                                 <div className={styles.specItem}>
                                     <i className="material-icons">cable</i>
-                                    <span>MR-30 connector for addressable strips</span>
+                                    <span>Industry standard 5.08 modular terminal block for addressable strips</span>
                                 </div>
                                 <div className={styles.specItem}>
                                     <i className="material-icons">settings_ethernet</i>
-                                    <span>6-pin connector for RGB WW CW strips</span>
+                                    <span>6-pin industry standard 5.08 modular terminal block for RGB/RGBW/White/CWWW strips</span>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.imagePlaceholder}>
                             <i className="material-icons">cable</i>
-                            Close-up of fovilight LED output side – MR-30 connector on left for addressable strips, 6-pin connector on right for RGBW strips, with labels
+                            Close-up of fovilight LED output side – 5.08 modular terminal blocks for addressable and RGB/RGBW/White/CWWW strips
                         </div>
                     </div>
                 </div>
@@ -147,7 +148,7 @@ export default function TechnologyPage() {
                     </h2>
                     <p className={`${styles.sectionSubtext} ${styles.sectionSubtextCenter}`}>
                         Create stunning custom effects with natural language AI prompts or write your own scripts
-                        using our easy-to-learn scripting language.
+                        using Lua scripting.
                     </p>
                     <div className={styles.twoColGridCards}>
                         <div className={styles.card}>
@@ -167,7 +168,7 @@ export default function TechnologyPage() {
                             </div>
                             <h4 className={styles.cardTitle}>Custom Scripting</h4>
                             <p className={styles.cardDesc}>
-                                For advanced users, our scripting language gives you full control over LED behavior.
+                                For advanced users, Lua gives you full control over LED behavior.
                                 Create complex animations, reactive effects, and share them on the Effect Store marketplace
                                 for others to enjoy.
                             </p>
@@ -187,35 +188,47 @@ export default function TechnologyPage() {
                     <div className={styles.specsList}>
                         <div className={styles.specItem}>
                             <i className="material-icons">bolt</i>
-                            <span>Voltage: 5–12V</span>
+                            <span>Voltage: 5–24V</span>
                         </div>
                         <div className={styles.specItem}>
                             <i className="material-icons">electric_meter</i>
                             <span>Current: up to 20A</span>
                         </div>
                         <div className={styles.specItem}>
-                            <i className="material-icons">battery_charging_full</i>
-                            <span>Power delivery: up to 100W</span>
-                        </div>
-                        <div className={styles.specItem}>
                             <i className="material-icons">security</i>
-                            <span>Over-current protection</span>
-                        </div>
-                        <div className={styles.specItem}>
-                            <i className="material-icons">shield</i>
-                            <span>Over-voltage protection</span>
+                            <span>Over-voltage and over-current protection</span>
                         </div>
                         <div className={styles.specItem}>
                             <i className="material-icons">wifi</i>
-                            <span>Wi-Fi connectivity</span>
+                            <span>Wi-Fi and BLE connectivity</span>
                         </div>
                         <div className={styles.specItem}>
-                            <i className="material-icons">portable_wifi_off</i>
-                            <span>Hotspot mode for on-the-go use</span>
+                            <i className="material-icons">hub</i>
+                            <span>Local-first operation</span>
                         </div>
-                        <div className={styles.specItem}>
-                            <i className="material-icons">sensors</i>
-                            <span>Sensor expansion port</span>
+                    </div>
+                </div>
+            </section>
+            </RevealOnScroll>
+
+            {/* On-the-go usage */}
+            <RevealOnScroll variant="fadeUp">
+            <section className={styles.sectionPadding}>
+                <div className={styles.container}>
+                    <div className={styles.twoColGrid}>
+                        <div>
+                            <h2 className={`${styles.sectionHeading} ${styles.sectionHeadingGradient}`}>On-the-go use</h2>
+                            <p className={styles.sectionSubtext}>
+                                For portable setups, fovilight uses BLE for nearby control and setup without requiring Wi-Fi infrastructure.
+                            </p>
+                            <br />
+                            <p className={styles.sectionSubtext}>
+                                This keeps mobile usage simple while maintaining local-first behavior when internet is unavailable.
+                            </p>
+                        </div>
+                        <div className={styles.imagePlaceholder}>
+                            <i className="material-icons">bluetooth</i>
+                            Fovilight used on-the-go with phone connected over BLE for quick local control
                         </div>
                     </div>
                 </div>

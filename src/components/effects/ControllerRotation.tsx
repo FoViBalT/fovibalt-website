@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import labelStyles from './ControllerRotation.module.css';
 
 interface ControllerRotationProps {
     className?: string;
@@ -8,8 +9,8 @@ interface ControllerRotationProps {
 
 /**
  * Wheel-locked controller showcase using the 19-frame connectors image sequence.
- * While pointer is over the component, wheel scroll is consumed to scrub frames,
- * preventing page scroll.
+ * Desktop: wheel scroll scrubs frames.
+ * Mobile: horizontal finger swipe scrubs frames.
  */
 export default function ControllerRotation({ className }: ControllerRotationProps) {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -18,6 +19,8 @@ export default function ControllerRotation({ className }: ControllerRotationProp
     const [loaded, setLoaded] = useState(false);
     const currentFrameRef = useRef(0);
     const wheelBufferRef = useRef(0);
+    const touchXRef = useRef(0);
+    const touchBufferRef = useRef(0);
     const raf = useRef<number>(0);
 
     const TOTAL_FRAMES = 19;
@@ -91,6 +94,43 @@ export default function ControllerRotation({ className }: ControllerRotationProp
         };
     }, [loaded]);
 
+    // Touch-driven horizontal frame scrubbing for mobile (Point 2)
+    useEffect(() => {
+        if (!loaded) return;
+        const container = containerRef.current;
+        if (!container) return;
+
+        const onTouchStart = (e: TouchEvent) => {
+            touchXRef.current = e.touches[0].clientX;
+            touchBufferRef.current = 0;
+        };
+
+        const onTouchMove = (e: TouchEvent) => {
+            const currentX = e.touches[0].clientX;
+            const deltaX = currentX - touchXRef.current;
+            touchXRef.current = currentX;
+            touchBufferRef.current += deltaX;
+
+            const threshold = 12;
+            while (Math.abs(touchBufferRef.current) >= threshold) {
+                // Swipe left → forward, swipe right → backward
+                const direction: 1 | -1 = touchBufferRef.current < 0 ? 1 : -1;
+                const nextFrame = Math.max(0, Math.min(TOTAL_FRAMES - 1, currentFrameRef.current + direction));
+                if (nextFrame !== currentFrameRef.current) {
+                    drawFrame(nextFrame);
+                }
+                touchBufferRef.current -= threshold * (touchBufferRef.current > 0 ? 1 : -1);
+            }
+        };
+
+        container.addEventListener('touchstart', onTouchStart, { passive: true });
+        container.addEventListener('touchmove', onTouchMove, { passive: true });
+        return () => {
+            container.removeEventListener('touchstart', onTouchStart);
+            container.removeEventListener('touchmove', onTouchMove);
+        };
+    }, [loaded]);
+
     useEffect(() => {
         if (!loaded) return;
         drawFrame(0);
@@ -107,7 +147,7 @@ export default function ControllerRotation({ className }: ControllerRotationProp
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                touchAction: 'none',
+                touchAction: 'pan-y pinch-zoom',
             }}
         >
             {/* Glow backdrop behind the controller */}
@@ -138,22 +178,7 @@ export default function ControllerRotation({ className }: ControllerRotationProp
 
             {loaded && (
                 <>
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: '10px',
-                            left: '10px',
-                            zIndex: 3,
-                            padding: '8px 10px',
-                            borderRadius: '10px',
-                            background: 'rgba(17,17,24,0.72)',
-                            border: '1px solid rgba(255,255,255,0.12)',
-                            backdropFilter: 'blur(8px)',
-                            fontFamily: "'Open Sans', sans-serif",
-                            fontSize: '12px',
-                            color: 'var(--Text_2)',
-                        }}
-                    >
+                    <div className={labelStyles.rotationLabel}>
                             Scroll over model to rotate
                     </div>
                 </>

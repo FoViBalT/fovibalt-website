@@ -36,7 +36,7 @@ export default function HomeClient() {
                                     <i className="material-icons">check</i> AI and scripting support
                                 </span>
                                 <span className={styles.featureCheck}>
-                                    <i className="material-icons">check</i> Length up to 20m
+                                    <i className="material-icons">check</i> Length up to 20m*
                                 </span>
                                 <span className={styles.featureCheck}>
                                     <i className="material-icons">check</i> 3 step first setup
@@ -61,7 +61,7 @@ export default function HomeClient() {
                     <div className={styles.statsInner}>
                         <div className={styles.statItem}>
                             <span className={styles.statNumber}>
-                                <AnimatedCounter end={20} suffix="m" />
+                                <AnimatedCounter end={20} suffix="m*" />
                             </span>
                             <span className={styles.statLabel}>Max LED length</span>
                         </div>
@@ -75,18 +75,17 @@ export default function HomeClient() {
                         <div className={styles.statDivider} />
                         <div className={styles.statItem}>
                             <span className={styles.statNumber}>
-                                <AnimatedCounter end={15} suffix="+" />
+                                <AnimatedCounter end={20} suffix="+" />
                             </span>
-                            <span className={styles.statLabel}>LED protocols</span>
+                            <span className={styles.statLabel}>Different LED types supported</span>
                         </div>
                         <div className={styles.statDivider} />
                         <div className={styles.statItem}>
-                            <span className={styles.statNumber}>
-                                <AnimatedCounter end={96} suffix="V" />
-                            </span>
-                            <span className={styles.statLabel}>Overvoltage protection</span>
+                            <span className={styles.statNumber}>Smart</span>
+                            <span className={styles.statLabel}>Intelligent LED strip protection</span>
                         </div>
                     </div>
+                    <p className={styles.statsNote}>*20m is achievable only under specific strip, wiring, and power conditions.</p>
                 </RevealOnScroll>
             </section>
 
@@ -99,14 +98,14 @@ export default function HomeClient() {
                 </RevealOnScroll>
             </section>
 
-            {/* ===== PRODUCT INFO (QR + Description) ===== */}
+            {/* ===== PRODUCT INFO (BLE + Description) ===== */}
             <section className={styles.productInfo}>
                 <div className={styles.productInfoInner}>
                     <RevealOnScroll variant="fadeLeft">
                         <div className={styles.qrImageWrapper}>
                             <div className={styles.imagePlaceholder}>
-                                <i className="material-icons">qr_code_2</i>
-                                QR code label on fovilight device – showing fovibalt.com URL, device name, date, MAC address
+                                <i className="material-icons">bluetooth_connected</i>
+                                Fovilight device shown in BLE pairing mode with nearby phone discovering it in the app device list
                             </div>
                         </div>
                     </RevealOnScroll>
@@ -120,7 +119,7 @@ export default function HomeClient() {
                             </p>
                             <p>
                                 The controller automatically detects LED strip type, length, and protocol using our proprietary LedID™ technology.
-                                Just plug in and everything works.
+                                Pair over BLE in the app, then run local-first without requiring internet access.
                             </p>
                         </div>
                     </RevealOnScroll>
@@ -195,7 +194,7 @@ export default function HomeClient() {
                         <div className={styles.featureContent}>
                             <h3 className={`${styles.featureLabel} ${styles.featureLabelGradient}`}>Effect store</h3>
                             <p className={styles.featureDesc}>
-                                Create your own effects using easy to learn scripting language or download user made ones from built in store!
+                                Create your own effects using Lua or download user-made ones from the built-in store.
                             </p>
                             <p className={styles.featureSmall}>
                                 Share your creations with the community and discover thousands of unique lighting effects.
@@ -223,9 +222,9 @@ export default function HomeClient() {
                         {[
                             { icon: 'smart_toy', title: 'AI Integration', desc: 'Automate your lighting by telling the AI what lighting you want to see.', color: 'rgba(89,126,255,0.4)' },
                             { icon: 'timer', title: 'Timer Effect', desc: 'Time all of your lights daily. Powered only with the Morning mode.', color: 'rgba(155,89,255,0.4)' },
-                            { icon: 'qr_code_scanner', title: '3 Step Setup', desc: 'Easy to understand setup with a simple QR-code and interface interaction.', color: 'rgba(255,88,220,0.4)' },
+                            { icon: 'bluetooth_searching', title: '3 Step Setup', desc: '1) Connect. 2) Select your device and connect to Wi-Fi. 3) Enjoy.', color: 'rgba(255,88,220,0.4)' },
                             { icon: 'cable', title: 'Lighting Connectors', desc: 'Connect any type of led strips to one controller using our various connectors.', color: 'rgba(89,126,255,0.4)' },
-                            { icon: 'power', title: 'Power Connectors', desc: 'Use any type of power connector to give electricity to your lights – USB-C, barrel jack, or screw terminal.', color: 'rgba(155,89,255,0.4)' },
+                            { icon: 'power', title: 'Power Connectors', desc: 'Use USB-C, barrel jack, or screw terminal to power your setup based on your installation needs.', color: 'rgba(155,89,255,0.4)' },
                             { icon: 'group', title: 'Grouping & Scenes', desc: 'Group controllers together for simultaneous control. Create scenes for the perfect atmosphere.', color: 'rgba(255,88,220,0.4)' },
                         ].map((feat, i) => (
                             <RevealOnScroll key={feat.title} variant="fadeUp" delay={i * 80}>
@@ -258,14 +257,14 @@ export default function HomeClient() {
                         {
                             title: 'Starter kit',
                             icon: 'inventory_2',
-                            imgDesc: 'Starter bundle box – controller, SK6812 5v LED strip coil, 5v power supply, and clamps neatly arranged',
-                            features: ['Fovilight controller', '5v SK6812 5v LED strip', '5v power supply', 'Different clamps to connect LED strip'],
+                            imgDesc: 'Starter bundle box – controller, 12v WS2815 5m LED strip, 12v power supply, and clamps neatly arranged',
+                            features: ['Fovilight controller', '12v ws2815 5m LED strip', '12v power supply', 'Different clamps to connect LED strip'],
                         },
                         {
                             title: 'Pro kit',
                             icon: 'star',
-                            imgDesc: 'Pro bundle box – controller, 10m ws2815 12v LED strip, 12v power supply, premium clamps, and accessories',
-                            features: ['Fovilight controller', '10m ws2815 12v LED strip', '12v power supply', 'Different clamps to connect LED strip'],
+                            imgDesc: 'Pro bundle box – controller, 10m APA102 12v LED strip, 12v power supply, premium clamps, and accessories',
+                            features: ['Fovilight controller', '10m Apa102 12v LED strip', '12v power supply', 'Different clamps to connect LED strip'],
                         },
                     ].map((bundle, i) => (
                         <RevealOnScroll key={bundle.title} variant="fadeUp" delay={i * 120} className={styles.bundleReveal}>
@@ -295,15 +294,14 @@ export default function HomeClient() {
                     <RevealOnScroll variant="fadeUp">
                         <h2 className={styles.reliabilityHeading}>Reliability on another level</h2>
                         <p className={styles.reliabilitySubtext}>
-                            The fovilight 1 will never betray you. Whether there is a storm breaking or the electricity
-                            has gone crazy – the fovilight saves and restores all data, protects itself from incorrect
-                            connections and guards against damage.
+                            Fovilight is designed for dependable, local-first operation. Whether your network is stable or
+                            temporarily unavailable, your saved settings stay protected and your lighting keeps working.
                         </p>
                     </RevealOnScroll>
                     <div className={styles.reliabilityGrid}>
                         {[
-                            { title: 'Over-current protection', desc: 'Neither fovilight nor your LED strip will be damaged if 50A will be applied to your fovilight power input.', icon: 'bolt' },
-                            { title: 'Over-voltage protection', desc: 'Neither fovilight nor your LED strip will be damaged if 96V will be applied to your fovilight power input.', icon: 'electric_bolt' },
+                            { title: 'Over-current protection', desc: 'If the LED output is accidentally shorted, both the controller and the LED strip are actively protected.', icon: 'bolt' },
+                            { title: 'Over-voltage protection', desc: 'If input voltage exceeds the required range, protection logic prevents damage to the controller and connected strip.', icon: 'electric_bolt' },
                             { title: 'Power shortage', desc: 'In case power shortage happened fovilight restores all saved data and works like nothing happened when power is reapplied again.', icon: 'power_off' },
                             { title: 'Incorrect connection', desc: 'In case you connected high voltage power supply and low voltage LED strip, no power will be provided to connected LED strip.', icon: 'shield' },
                         ].map((item, i) => (

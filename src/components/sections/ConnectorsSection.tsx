@@ -237,8 +237,8 @@ export default function ConnectorsSection() {
                     <h3 ref={title2} className={`${styles.title} ${styles.fade_out}`}>Power connectors</h3>
                 </div>
                 <div ref={ref} className={`${styles.contentHolder} ${inView ? styles.fadeInCell : ''}`}>
-                    <p ref={text1} className={styles.text1}>MR-30 connector for addressable LED strip</p>
-                    <p ref={text2} className={styles.text2}>5 pin connector for RGB WW CW strips</p>
+                    <p ref={text1} className={styles.text1}>Industry standard 5.08 modular terminal block for addressable LED strips</p>
+                    <p ref={text2} className={styles.text2}>6-pin industry standard 5.08 modular terminal block for RGB/RGBW/White/CWWW strips</p>
                     <div ref={line1} className={styles.line1}></div>
                     <div ref={line2} className={styles.line2}></div>
 

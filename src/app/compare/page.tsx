@@ -10,7 +10,7 @@ export default function ComparePage() {
         { name: 'Overcurrent protection', icon: 'security', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
         { name: 'Multiple access', icon: 'group', fovibalt: true, twinkly: false, xiaomi: true, philips: true },
         { name: 'Grouping', icon: 'workspaces', fovibalt: true, twinkly: true, xiaomi: false, philips: false },
-        { name: 'Decentralization', icon: 'hub', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
+        { name: 'Local-first', icon: 'hub', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
         { name: 'Standby mode', icon: 'dark_mode', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
         { name: 'Access control', icon: 'lock', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
         { name: 'Virtual controllers', icon: 'developer_board', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
@@ -20,8 +20,7 @@ export default function ComparePage() {
         { name: 'Universal LED support', icon: 'cable', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
         { name: 'Auto LED detection', icon: 'memory', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
         { name: 'Web control', icon: 'language', fovibalt: true, twinkly: true, xiaomi: true, philips: true },
-        { name: 'Sensor support', icon: 'sensors', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'On-the-go (hotspot)', icon: 'portable_wifi_off', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
+        { name: 'On-the-go (BLE)', icon: 'bluetooth', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
     ];
 
     const Check = () => <i className={`material-icons ${styles.checkIcon}`}>check_circle</i>;
