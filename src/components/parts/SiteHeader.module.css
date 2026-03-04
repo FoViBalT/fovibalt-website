@@ -27,11 +27,11 @@
 }
 
 .logoIcon {
-    font-size: 28px;
-    background: var(--gradient-1);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    width: 32px;
+    height: 32px;
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .nav {

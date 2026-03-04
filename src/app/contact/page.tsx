@@ -1,11 +1,26 @@
 import Link from 'next/link';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
+import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import TiltCard from '@/components/effects/TiltCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us – Get in Touch with the Fovibalt Team',
+  description:
+    'Contact Fovibalt for questions about Fovilight, beta testing opportunities, collaboration, or joining the team. Reach us at info@fovibalt.com.',
+  alternates: { canonical: 'https://fovibalt.com/contact' },
+  openGraph: {
+    title: 'Contact Fovibalt',
+    description: 'Questions, beta testing, collaboration — reach out to the Fovibalt team.',
+    url: 'https://fovibalt.com/contact',
+  },
+};
 
 export default function ContactPage() {
     return (
         <>
+            <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">
             <section className={styles.pageHero}>

@@ -12,7 +12,7 @@ export default function HomeClient() {
     return (
         <div style={{ position: 'relative' }}>
             {/* ===== HERO SECTION ===== */}
-            <section className={styles.hero}>
+            <section className={styles.hero} aria-label="Universal LED strip controller hero">
                 <div className={styles.heroInner}>
                     <div className={styles.heroContent}>
                         <RevealOnScroll variant="fadeUp">
@@ -56,7 +56,7 @@ export default function HomeClient() {
             </section>
 
             {/* ===== STATS BAR ===== */}
-            <section className={styles.statsBar}>
+            <section className={styles.statsBar} aria-label="Fovilight key specifications">
                 <RevealOnScroll variant="fadeUp">
                     <div className={styles.statsInner}>
                         <div className={styles.statItem}>
@@ -99,7 +99,7 @@ export default function HomeClient() {
             </section>
 
             {/* ===== PRODUCT INFO (BLE + Description) ===== */}
-            <section className={styles.productInfo}>
+            <section className={styles.productInfo} aria-label="About Fovilight controller">
                 <div className={styles.productInfoInner}>
                     <RevealOnScroll variant="fadeLeft">
                         <div className={styles.qrImageWrapper}>
@@ -149,6 +149,7 @@ export default function HomeClient() {
                                 which simplifies installation and decreases error probability!
                             </p>
                             <p className={styles.featureSmall}>No need to lookup LED strip type, and no confusion!</p>
+                            <Link href="/technology" className={styles.featureLink}>Learn more about LedID™ →</Link>
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeRight" delay={150}>
@@ -174,6 +175,7 @@ export default function HomeClient() {
                             <p className={styles.featureSmall}>
                                 Describe your custom effect and with AI will convert it to a working effect, that you can run
                             </p>
+                            <Link href="/technology" className={styles.featureLink}>Explore AI & scripting →</Link>
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeLeft" delay={150}>
@@ -199,6 +201,7 @@ export default function HomeClient() {
                             <p className={styles.featureSmall}>
                                 Share your creations with the community and discover thousands of unique lighting effects.
                             </p>
+                            <Link href="/roadmap" className={styles.featureLink}>See Effect Store roadmap →</Link>
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeRight" delay={150}>
@@ -242,7 +245,7 @@ export default function HomeClient() {
             </section>
 
             {/* ===== BUNDLES ===== */}
-            <section className={styles.bundlesSection}>
+            <section className={styles.bundlesSection} aria-label="Fovilight product bundles">
                 <RevealOnScroll variant="fadeUp">
                     <h2 className={styles.bundlesHeading}>Find which setup suits you more</h2>
                 </RevealOnScroll>
@@ -289,7 +292,7 @@ export default function HomeClient() {
             </section>
 
             {/* ===== RELIABILITY ===== */}
-            <section className={styles.reliabilitySection}>
+            <section className={styles.reliabilitySection} aria-label="Reliability and protection features">
                 <div className={styles.reliabilityInner}>
                     <RevealOnScroll variant="fadeUp">
                         <h2 className={styles.reliabilityHeading}>Reliability on another level</h2>
@@ -313,6 +316,50 @@ export default function HomeClient() {
                                     <h4>{item.title}</h4>
                                     <p>{item.desc}</p>
                                 </TiltCard>
+                            </RevealOnScroll>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ===== FAQ SECTION ===== */}
+            <section className={styles.faqSection} aria-label="Frequently Asked Questions">
+                <div className={styles.faqInner}>
+                    <RevealOnScroll variant="fadeUp">
+                        <h2 className={styles.faqHeading}>Frequently Asked Questions</h2>
+                    </RevealOnScroll>
+                    <div className={styles.faqGrid}>
+                        {[
+                            {
+                                q: 'What LED strip types does Fovilight support?',
+                                a: 'Fovilight supports 20+ types including WS2811, WS2812, WS2812B, WS2813, WS2815, SK6812, SK6812 RGBW, APA102, APA102C, HD107S, standard RGB, RGBW, and warm/cool white strips.',
+                            },
+                            {
+                                q: 'What is LedID™ technology?',
+                                a: 'LedID™ is our proprietary technology that automatically detects the connected LED strip type, communication protocol, length, and fault conditions — no manual configuration needed.',
+                            },
+                            {
+                                q: 'Does Fovilight require internet to work?',
+                                a: 'No. Fovilight operates local-first, meaning it works without internet. Pair over BLE, connect to Wi-Fi optionally, and your lights work even if your router goes offline.',
+                            },
+                            {
+                                q: 'How do I set up Fovilight?',
+                                a: 'Setup takes 3 steps: 1) Connect your LED strip and power supply. 2) Open the app and select your Fovilight over BLE; connect to Wi-Fi. 3) Enjoy full control.',
+                            },
+                            {
+                                q: 'Can I create custom lighting effects?',
+                                a: 'Yes. You can describe effects in plain language using AI, or write your own with Lua scripting. You can also download community-made effects from the built-in Effect Store.',
+                            },
+                            {
+                                q: 'What power options are available?',
+                                a: 'Fovilight supports USB Type-C (5A), barrel jack (7A), and screw terminal (up to 20A) with a 5–24V voltage range. Use a power bank for portable setups.',
+                            },
+                        ].map((faq) => (
+                            <RevealOnScroll key={faq.q} variant="fadeUp">
+                                <details className={styles.faqItem}>
+                                    <summary className={styles.faqQuestion}>{faq.q}</summary>
+                                    <p className={styles.faqAnswer}>{faq.a}</p>
+                                </details>
                             </RevealOnScroll>
                         ))}
                     </div>

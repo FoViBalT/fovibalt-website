@@ -1,10 +1,25 @@
 import Link from 'next/link';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
+import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '3-Step Setup Guide – Connect, Pair over BLE, Enjoy',
+  description:
+    'Set up Fovilight in 3 easy steps: connect your LED strip, pair over BLE in the app and connect to Wi-Fi, then enjoy full smart lighting control. No technical knowledge required.',
+  alternates: { canonical: 'https://fovibalt.com/setup' },
+  openGraph: {
+    title: 'Fovilight 3-Step Setup Guide',
+    description: 'Connect your LED strip, pair over BLE, enjoy. No technical knowledge needed. Works with USB-C, barrel jack, or screw terminal power.',
+    url: 'https://fovibalt.com/setup',
+  },
+};
 
 export default function SetupPage() {
     return (
         <>
+            <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Setup', url: '/setup' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">
             <section className={styles.pageHero}>

@@ -17,10 +17,12 @@ export default function ControllerRotation({ className }: ControllerRotationProp
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const framesRef = useRef<HTMLImageElement[]>([]);
     const [loaded, setLoaded] = useState(false);
+    const [showHint, setShowHint] = useState(true);
     const currentFrameRef = useRef(0);
     const wheelBufferRef = useRef(0);
     const touchXRef = useRef(0);
     const touchBufferRef = useRef(0);
+    const hintDismissedRef = useRef(false);
     const raf = useRef<number>(0);
 
     const TOTAL_FRAMES = 19;
@@ -63,6 +65,12 @@ export default function ControllerRotation({ className }: ControllerRotationProp
         currentFrameRef.current = index;
     };
 
+    const dismissHint = () => {
+        if (hintDismissedRef.current) return;
+        hintDismissedRef.current = true;
+        setShowHint(false);
+    };
+
     // Wheel-driven frame scrubbing with page scroll lock over component
     useEffect(() => {
         if (!loaded) return;
@@ -78,6 +86,7 @@ export default function ControllerRotation({ className }: ControllerRotationProp
 
         const onWheel = (event: WheelEvent) => {
             event.preventDefault();
+            dismissHint();
             wheelBufferRef.current += event.deltaY;
 
             const threshold = 32;
@@ -109,6 +118,7 @@ export default function ControllerRotation({ className }: ControllerRotationProp
             const currentX = e.touches[0].clientX;
             const deltaX = currentX - touchXRef.current;
             touchXRef.current = currentX;
+            if (Math.abs(deltaX) > 0) dismissHint();
             touchBufferRef.current += deltaX;
 
             const threshold = 12;
@@ -176,7 +186,7 @@ export default function ControllerRotation({ className }: ControllerRotationProp
                 }}
             />
 
-            {loaded && (
+            {loaded && showHint && (
                 <>
                     <div className={labelStyles.rotationLabel}>
                             Scroll over model to rotate

@@ -1,7 +1,21 @@
 import Link from 'next/link';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
+import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import TiltCard from '@/components/effects/TiltCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Fovibalt – The Team Behind the Universal LED Controller',
+  description:
+    'Meet the Fovibalt team — Nikita and Vlad — building the only universal LED strip controller with LedID™ technology, AI effects, and local-first smart lighting control.',
+  alternates: { canonical: 'https://fovibalt.com/about' },
+  openGraph: {
+    title: 'About Fovibalt – Our Mission & Team',
+    description: 'Two engineers building the future of universal LED lighting control with LedID™, AI, and open scripting.',
+    url: 'https://fovibalt.com/about',
+  },
+};
 
 export default function AboutPage() {
     const team = [
@@ -11,6 +25,7 @@ export default function AboutPage() {
 
     return (
         <>
+            <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">
             <section className={styles.pageHero}>

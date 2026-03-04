@@ -1,7 +1,21 @@
 import Link from 'next/link';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
+import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import TiltCard from '@/components/effects/TiltCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Compare – Fovilight vs Twinkly vs Xiaomi vs Philips Hue',
+  description:
+    'See how Fovilight compares to Twinkly, Xiaomi, and Philips Hue. Universal LED support, AI effects, custom scripting, over-current protection, local-first operation – features competitors don\'t offer.',
+  alternates: { canonical: 'https://fovibalt.com/compare' },
+  openGraph: {
+    title: 'Fovilight vs Twinkly vs Xiaomi vs Philips – LED Controller Comparison',
+    description: 'Universal LED support, AI effects, scripting, protection – see why Fovilight leads in 16 feature categories.',
+    url: 'https://fovibalt.com/compare',
+  },
+};
 
 export default function ComparePage() {
     const features = [
@@ -28,6 +42,7 @@ export default function ComparePage() {
 
     return (
         <>
+            <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Compare', url: '/compare' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">
             <section className={styles.pageHero}>

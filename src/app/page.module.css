@@ -357,6 +357,24 @@
     font-style: italic;
 }
 
+.featureLink {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--small-text);
+    font-weight: 600;
+    color: var(--Accent_1);
+    text-decoration: none;
+    margin-top: 4px;
+    transition: opacity 0.2s;
+}
+
+.featureLink:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .featureImage {
     position: relative;
     width: 100%;
@@ -878,4 +896,101 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+/* ===== FAQ SECTION ===== */
+.faqSection {
+    padding: var(--section-padding) var(--content-gutter);
+    background: var(--Background_2);
+}
+
+.faqInner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.faqHeading {
+    text-align: center;
+    font-size: var(--section-h2);
+    font-weight: 700;
+    background: var(--gradient-1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 48px;
+}
+
+.faqGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faqItem {
+    background: var(--Background_1);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 0;
+    transition: border-color 0.3s;
+    overflow: hidden;
+}
+
+.faqItem[open] {
+    border-color: rgba(173, 198, 255, 0.2);
+}
+
+.faqQuestion {
+    padding: 20px 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--body-text);
+    font-weight: 600;
+    color: var(--Text_1);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.2s;
+}
+
+.faqQuestion::-webkit-details-marker {
+    display: none;
+}
+
+.faqQuestion::after {
+    content: '+';
+    font-size: 22px;
+    color: var(--Accent_1);
+    flex-shrink: 0;
+    margin-left: 16px;
+    transition: transform 0.2s;
+}
+
+.faqItem[open] .faqQuestion::after {
+    content: '−';
+}
+
+.faqAnswer {
+    padding: 0 24px 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--small-text);
+    color: var(--Text_2);
+    line-height: 1.7;
+}
+
+@media screen and (max-width: 768px) {
+    .faqHeading {
+        margin-bottom: 32px;
+    }
+
+    .faqQuestion {
+        padding: 16px 20px;
+        font-size: var(--small-text);
+    }
+
+    .faqAnswer {
+        padding: 0 20px 16px;
+    }
 }

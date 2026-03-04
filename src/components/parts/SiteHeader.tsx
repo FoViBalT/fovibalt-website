@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -35,7 +36,7 @@ export default function SiteHeader() {
         <>
             <header className={styles.header}>
                 <Link href="/" className={styles.logo}>
-                    <span className={styles.logoIcon}>⬡⬡</span>
+                    <Image src="/images/logo.svg" alt="Fovibalt logo" width={32} height={32} className={styles.logoIcon} priority />
                     fovibalt
                 </Link>
                 <nav className={styles.nav}>

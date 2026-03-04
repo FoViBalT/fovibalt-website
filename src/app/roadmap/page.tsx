@@ -1,7 +1,21 @@
 import Link from 'next/link';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
+import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import TiltCard from '@/components/effects/TiltCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Roadmap – Completed Milestones & Upcoming Features',
+  description:
+    'Track Fovilight\'s progress: completed prototype, mobile app, and web platform. Upcoming: scenes, LED strip splitting, sensor automation, Effect Store launch, and mass production.',
+  alternates: { canonical: 'https://fovibalt.com/roadmap' },
+  openGraph: {
+    title: 'Fovilight Product Roadmap',
+    description: 'From working prototype to mass production. See completed milestones and upcoming features.',
+    url: 'https://fovibalt.com/roadmap',
+  },
+};
 
 export default function RoadmapPage() {
     const completed = [
@@ -72,6 +86,7 @@ export default function RoadmapPage() {
 
     return (
         <>
+            <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Roadmap', url: '/roadmap' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">
             <section className={styles.pageHero}>

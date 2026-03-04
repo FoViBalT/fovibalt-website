@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
@@ -8,7 +9,7 @@ export default function Footer() {
                 <div className={styles.footerTop}>
                     <div className={styles.footerBrand}>
                         <div className={styles.footerLogo}>
-                            <span className={styles.footerLogoIcon}>⬡⬡</span>
+                            <Image src="/images/logo.svg" alt="Fovibalt logo" width={30} height={30} className={styles.footerLogoIcon} />
                             fovibalt
                         </div>
                         <p className={styles.footerDesc}>

@@ -1,7 +1,21 @@
 import Link from 'next/link';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
+import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import TiltCard from '@/components/effects/TiltCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Bundles – Replacement Kit, Starter Kit & Pro Kit',
+  description:
+    'Choose your Fovilight bundle: Replacement kit for upgrading existing setups, Starter kit with WS2815 5m LED strip, or Pro kit with 10m APA102 strip. All include the universal Fovilight controller.',
+  alternates: { canonical: 'https://fovibalt.com/bundles' },
+  openGraph: {
+    title: 'Fovilight Bundles – Find Your Perfect LED Setup',
+    description: 'Replacement, Starter & Pro kits. From simple controller upgrades to complete 10m professional LED installations.',
+    url: 'https://fovibalt.com/bundles',
+  },
+};
 
 export default function BundlesPage() {
     const bundles = [
@@ -49,6 +63,35 @@ export default function BundlesPage() {
 
     return (
         <>
+            <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Bundles', url: '/bundles' }]} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'ItemList',
+                    name: 'Fovilight LED Controller Bundles',
+                    description: 'Universal LED strip controller bundles for every need',
+                    url: 'https://fovibalt.com/bundles',
+                    numberOfItems: 3,
+                    itemListElement: bundles.map((b, i) => ({
+                        '@type': 'ListItem',
+                        position: i + 1,
+                        item: {
+                            '@type': 'Product',
+                            name: `Fovilight ${b.name}`,
+                            description: b.desc,
+                            brand: { '@type': 'Brand', name: 'Fovibalt' },
+                            category: 'LED Controllers',
+                            url: 'https://fovibalt.com/bundles',
+                            offers: {
+                                '@type': 'Offer',
+                                availability: 'https://schema.org/PreOrder',
+                                priceCurrency: 'EUR',
+                            },
+                        },
+                    })),
+                }) }}
+            />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">
             <section className={styles.pageHero}>

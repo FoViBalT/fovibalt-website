@@ -1,6 +1,20 @@
 import Link from 'next/link';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
+import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Technology – LedID™ Auto-Detection, AI Effects & Lua Scripting',
+  description:
+    'Learn about Fovilight\'s technology: LedID™ auto-detection for 20+ LED types, AI effect generation, Lua scripting engine, versatile 5–24V power input, BLE connectivity, and local-first operation.',
+  alternates: { canonical: 'https://fovibalt.com/technology' },
+  openGraph: {
+    title: 'Fovilight Technology – LedID™, AI Effects & Scripting',
+    description: 'LedID™ auto-detects 20+ LED strip types. AI generates custom effects. Lua scripting for full control. 5–24V, up to 20A.',
+    url: 'https://fovibalt.com/technology',
+  },
+};
 
 export default function TechnologyPage() {
     const ledStripTypes = [
@@ -11,6 +25,7 @@ export default function TechnologyPage() {
 
     return (
         <>
+            <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Technology', url: '/technology' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">
             <section className={styles.pageHero}>
