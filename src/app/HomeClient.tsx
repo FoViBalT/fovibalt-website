@@ -44,7 +44,7 @@ export default function HomeClient() {
                             </div>
                         </RevealOnScroll>
                         <RevealOnScroll variant="fadeUp" delay={300}>
-                            <Link href="/bundles" className={styles.heroCta}>Join wait list</Link>
+                            <Link href="/contact" className={styles.heroCta}>Join wait list</Link>
                         </RevealOnScroll>
                     </div>
                     <RevealOnScroll variant="scaleUp" delay={200}>
@@ -85,7 +85,7 @@ export default function HomeClient() {
                             <span className={styles.statLabel}>Intelligent LED strip protection</span>
                         </div>
                     </div>
-                    <p className={styles.statsNote}>*20m is achievable only under specific strip, wiring, and power conditions.</p>
+                    <p className={styles.statsNote}>*20m is achievable only when the full 20m strip uses less than 20A.</p>
                 </RevealOnScroll>
             </section>
 
@@ -118,8 +118,8 @@ export default function HomeClient() {
                                 Full list can be found <Link href="/technology">here</Link>.
                             </p>
                             <p>
-                                The controller automatically detects LED strip type, length, and protocol using our proprietary LedID™ technology.
-                                Pair over BLE in the app, then run local-first without requiring internet access.
+                                The controller automatically detects LED strip type, length, and protocol using LedID™ technology.
+                                Pair using BLE, works local-first without requiring internet access.
                             </p>
                         </div>
                     </RevealOnScroll>
@@ -336,7 +336,7 @@ export default function HomeClient() {
                             },
                             {
                                 q: 'What is LedID™ technology?',
-                                a: 'LedID™ is our proprietary technology that automatically detects the connected LED strip type, communication protocol, length, and fault conditions — no manual configuration needed.',
+                                a: 'LedID™ automatically detects the connected LED strip type, communication protocol, length, and fault conditions — no manual configuration needed.',
                             },
                             {
                                 q: 'Does Fovilight require internet to work?',

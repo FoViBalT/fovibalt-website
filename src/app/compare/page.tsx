@@ -99,7 +99,7 @@ export default function ComparePage() {
                         Why choose Fovilight?
                     </h2>
                     <p className={`${styles.sectionSubtext} ${styles.sectionSubtextCenter}`}>
-                        While other controllers lock you into their ecosystem with proprietary strips and limited features,
+                        While other controllers lock you into their ecosystem with brand-specific strips and limited features,
                         fovilight gives you complete freedom and cutting-edge technology.
                     </p>
                     <div className={styles.threeColGrid}>
@@ -109,7 +109,7 @@ export default function ComparePage() {
                             </div>
                             <h4 className={styles.cardTitle}>Universal compatibility</h4>
                             <p className={styles.cardDesc}>
-                                Works with LED strips from any manufacturer. No vendor lock-in, no proprietary connectors.
+                                Works with LED strips from any manufacturer. No vendor lock-in, no brand-specific connectors.
                                 Use the strips you already own.
                             </p>
                         </TiltCard>

@@ -83,7 +83,7 @@ const jsonLd = {
           name: 'What is LedID™ technology?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'LedID™ is a proprietary technology that automatically detects the connected LED strip type, communication protocol, length, and fault conditions — no manual configuration needed.',
+            text: 'LedID™ automatically detects the connected LED strip type, communication protocol, length, and fault conditions — no manual configuration needed.',
           },
         },
         {

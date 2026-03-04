@@ -219,6 +219,11 @@ export default function RoadmapPage() {
                             </p>
                             <br />
                             <p className={styles.sectionSubtext}>
+                                We validated this demand through a survey of over 200 respondents, confirming strong interest
+                                in universal LED controllers with advanced features like auto-detection and AI effects.
+                            </p>
+                            <br />
+                            <p className={styles.sectionSubtext}>
                                 Our target audience: people aged 20–40, gamers, and homeowners looking to upgrade
                                 their lighting. The market is ready for a universal solution.
                             </p>

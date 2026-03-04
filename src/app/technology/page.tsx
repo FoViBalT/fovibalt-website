@@ -46,7 +46,7 @@ export default function TechnologyPage() {
                                 LedID™ Technology
                             </h2>
                             <p className={styles.sectionSubtext}>
-                                LedID is our proprietary technology that enables the fovilight controller to automatically identify
+                                LedID is the technology that enables the fovilight controller to automatically identify
                                 connected LED strips. It detects the communication protocol, strip length, number of LEDs, and
                                 fault conditions — all within seconds.
                             </p>

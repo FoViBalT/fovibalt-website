@@ -447,16 +447,18 @@
 /* Timeline */
 .timeline {
     position: relative;
+    --timeline-axis-x: 16px;
     padding-left: 40px;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 15px;
+    left: var(--timeline-axis-x);
     top: 0;
     bottom: 0;
     width: 2px;
+    transform: translateX(-50%);
     background: linear-gradient(180deg, var(--Accent_2), var(--Accent_1), rgba(173, 198, 255, 0.2));
 }
 
@@ -471,10 +473,11 @@
 
 .timelineDot {
     position: absolute;
-    left: -33px;
+    left: -30px;
     top: 4px;
     width: 12px;
     height: 12px;
+    box-sizing: border-box;
     border-radius: 50%;
     background: var(--Accent_1);
     border: 2px solid var(--Background_1);
