@@ -5,13 +5,13 @@ import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Technology – LedID™ Auto-Detection, AI Effects & Lua Scripting',
+  title: 'Technology - LedID™ Auto-Detection, AI Effects & Lua Scripting',
   description:
-    'Learn about Fovilight\'s technology: LedID™ auto-detection for 20+ LED types, AI effect generation, Lua scripting engine, versatile 5–24V power input, BLE connectivity, and local-first operation.',
+    'Learn about Fovilight\'s technology: LedID™ auto-detection for 20+ LED types, AI effect generation, Lua scripting engine, versatile 5-24V power input, BLE connectivity, and local-first operation.',
   alternates: { canonical: 'https://fovibalt.com/technology' },
   openGraph: {
-    title: 'Fovilight Technology – LedID™, AI Effects & Scripting',
-    description: 'LedID™ auto-detects 20+ LED strip types. AI generates custom effects. Lua scripting for full control. 5–24V, up to 20A.',
+    title: 'Fovilight Technology - LedID™, AI Effects & Scripting',
+    description: 'LedID™ auto-detects 20+ LED strip types. AI generates custom effects. Lua scripting for full control. 5-24V, up to 20A.',
     url: 'https://fovibalt.com/technology',
   },
 };
@@ -31,7 +31,7 @@ export default function TechnologyPage() {
             <section className={styles.pageHero}>
                 <h1 className={styles.pageTitle}>Technology</h1>
                 <p className={styles.pageSubtitle}>
-                    Discover the innovations behind fovilight – from LedID™ auto-detection to AI-powered lighting effects.
+                    Discover the innovations behind fovilight - from LedID™ auto-detection to AI-powered lighting effects.
                 </p>
             </section>
             </RevealOnScroll>
@@ -58,7 +58,7 @@ export default function TechnologyPage() {
                         </div>
                         <div className={styles.imagePlaceholder}>
                             <i className="material-icons">memory</i>
-                            Diagram showing LedID detection flow – LED strip plugged in, controller analyzing signal, screen showing detected parameters (type: WS2812, length: 5m, LEDs: 150)
+                            Diagram showing LedID detection flow - LED strip plugged in, controller analyzing signal, screen showing detected parameters (type: WS2812, length: 5m, LEDs: 150)
                         </div>
                     </div>
                 </div>
@@ -109,13 +109,13 @@ export default function TechnologyPage() {
                                 </div>
                                 <div className={styles.specItem}>
                                     <i className="material-icons">bolt</i>
-                                    <span>5–24V voltage range, up to 20A</span>
+                                    <span>5-24V voltage range, up to 20A</span>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.imagePlaceholder}>
                             <i className="material-icons">power</i>
-                            Top-down view of fovilight controller showing all three power input ports – USB-C, barrel jack, and screw terminal – with labels pointing to each
+                            Top-down view of fovilight controller showing all three power input ports - USB-C, barrel jack, and screw terminal - with labels pointing to each
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@ export default function TechnologyPage() {
                         </div>
                         <div className={styles.imagePlaceholder}>
                             <i className="material-icons">cable</i>
-                            Close-up of fovilight LED output side – 5.08 modular terminal blocks for addressable and RGB/RGBW/White/CWWW strips
+                            Close-up of fovilight LED output side - 5.08 modular terminal blocks for addressable and RGB/RGBW/White/CWWW strips
                         </div>
                     </div>
                 </div>
@@ -174,7 +174,7 @@ export default function TechnologyPage() {
                             <p className={styles.cardDesc}>
                                 Describe the lighting effect you want in plain language and our AI converts it into a working
                                 effect that runs directly on your fovilight. From &ldquo;warm sunrise wake-up&rdquo; to &ldquo;cyberpunk gaming
-                                glow&rdquo; – if you can describe it, AI can create it.
+                                glow&rdquo; - if you can describe it, AI can create it.
                             </p>
                         </div>
                         <div className={styles.card}>
@@ -203,7 +203,7 @@ export default function TechnologyPage() {
                     <div className={styles.specsList}>
                         <div className={styles.specItem}>
                             <i className="material-icons">bolt</i>
-                            <span>Voltage: 5–24V</span>
+                            <span>Voltage: 5-24V</span>
                         </div>
                         <div className={styles.specItem}>
                             <i className="material-icons">electric_meter</i>

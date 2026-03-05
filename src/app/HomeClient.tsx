@@ -221,19 +221,23 @@ export default function HomeClient() {
                     <RevealOnScroll variant="fadeUp">
                         <h2 className={styles.featuresHighlightHeading}>Everything you need, built in</h2>
                     </RevealOnScroll>
-                    <div className={styles.featuresGrid}>
+                    <div className={styles.featuresGrid}> 
                         {[
                             { icon: 'smart_toy', title: 'AI Integration', desc: 'Automate your lighting by telling the AI what lighting you want to see.', color: 'rgba(89,126,255,0.4)' },
-                            { icon: 'timer', title: 'Timer Effect', desc: 'Time all of your lights daily. Powered only with the Morning mode.', color: 'rgba(155,89,255,0.4)' },
+                            { icon: 'group', title: 'Grouping', desc: 'Group controllers together for simultaneous control.', color: 'rgba(155,89,255,0.4)' },
                             { icon: 'bluetooth_searching', title: '3 Step Setup', desc: '1) Connect. 2) Select your device and connect to Wi-Fi. 3) Enjoy.', color: 'rgba(255,88,220,0.4)' },
                             { icon: 'cable', title: 'Lighting Connectors', desc: 'Connect any type of led strips to one controller using our various connectors.', color: 'rgba(89,126,255,0.4)' },
                             { icon: 'power', title: 'Power Connectors', desc: 'Use USB-C, barrel jack, or screw terminal to power your setup based on your installation needs.', color: 'rgba(155,89,255,0.4)' },
-                            { icon: 'group', title: 'Grouping & Scenes', desc: 'Group controllers together for simultaneous control. Create scenes for the perfect atmosphere.', color: 'rgba(255,88,220,0.4)' },
+                            { icon: 'scene', title: 'Scenes', desc: 'Create scenes for the perfect atmosphere.', color: 'rgba(255,88,220,0.4)' },
                         ].map((feat, i) => (
                             <RevealOnScroll key={feat.title} variant="fadeUp" delay={i * 80}>
                                 <TiltCard className={styles.featureCard} glowColor={feat.color}>
                                     <div className={styles.featureCardIcon}>
-                                        <i className="material-icons">{feat.icon}</i>
+                                        {feat.icon === 'scene' ? (
+                                            <span className="material-symbols-outlined">scene</span>
+                                        ) : (
+                                            <i className="material-icons">{feat.icon}</i>
+                                        )}
                                     </div>
                                     <h4 className={styles.featureCardTitle}>{feat.title}</h4>
                                     <p className={styles.featureCardDesc}>{feat.desc}</p>
@@ -266,8 +270,8 @@ export default function HomeClient() {
                         {
                             title: 'Pro kit',
                             icon: 'star',
-                            imgDesc: 'Pro bundle box – controller, 10m APA102 12v LED strip, 12v power supply, premium clamps, and accessories',
-                            features: ['Fovilight controller', '10m Apa102 12v LED strip', '12v power supply', 'Different clamps to connect LED strip'],
+                            imgDesc: 'Pro bundle box – controller, 10m WS2805 12v LED strip, 12v power supply, premium clamps, and accessories',
+                            features: ['Fovilight controller', '10m WS2805 12v LED strip', '12v power supply', 'Different clamps to connect LED strip'],
                         },
                     ].map((bundle, i) => (
                         <RevealOnScroll key={bundle.title} variant="fadeUp" delay={i * 120} className={styles.bundleReveal}>
@@ -352,7 +356,7 @@ export default function HomeClient() {
                             },
                             {
                                 q: 'What power options are available?',
-                                a: 'Fovilight supports USB Type-C (5A), barrel jack (7A), and screw terminal (up to 20A) with a 5–24V voltage range. Use a power bank for portable setups.',
+                                a: 'Fovilight supports USB Type-C (5A), barrel jack (7A), and screw terminal (up to 20A) with a 5-24V voltage range. Use a power bank for portable setups.',
                             },
                         ].map((faq) => (
                             <RevealOnScroll key={faq.q} variant="fadeUp">

@@ -33,8 +33,8 @@ export default function ComparePage() {
         { name: 'Custom scripting', icon: 'code', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
         { name: 'Universal LED support', icon: 'cable', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
         { name: 'Auto LED detection', icon: 'memory', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Web control', icon: 'language', fovibalt: true, twinkly: true, xiaomi: true, philips: true },
-        { name: 'On-the-go (BLE)', icon: 'bluetooth', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
+        { name: 'Remote control', icon: 'language', fovibalt: true, twinkly: true, xiaomi: true, philips: true },
+        { name: 'On-the-go (BLE)', icon: 'bluetooth', fovibalt: true, twinkly: false, xiaomi: true, philips: false },
     ];
 
     const Check = () => <i className={`material-icons ${styles.checkIcon}`}>check_circle</i>;

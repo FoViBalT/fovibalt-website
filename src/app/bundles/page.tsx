@@ -24,8 +24,6 @@ export default function BundlesPage() {
             desc: 'Perfect if you already have LED strips and a power supply. Just swap your old controller for fovilight.',
             features: [
                 'Fovilight controller',
-                'Industry standard 5.08 modular terminal block connector cable',
-                '6-pin industry standard 5.08 modular terminal block connector cable',
                 'Different clamps to connect LED strip',
                 'Quick start guide',
             ],
@@ -41,6 +39,7 @@ export default function BundlesPage() {
                 '12v ws2815 5m LED strip',
                 '12v power supply',
                 'Different clamps to connect LED strip',
+                'Quick start guide',
             ],
             idealFor: 'First-time LED users who want a complete solution',
             icon: 'inventory_2',
@@ -51,13 +50,14 @@ export default function BundlesPage() {
             desc: 'The premium package for demanding installations with 10 meters of high-quality 12V LED strip.',
             features: [
                 'Fovilight controller',
-                '10m Apa102 12v LED strip',
+                '10m ws2805 12v LED strip',
                 '12v power supply',
                 'Different clamps to connect LED strip',
+                'Quick start guide',
             ],
             idealFor: 'Whole-room installations, professional setups, enthusiasts',
             icon: 'star',
-            imagePlaceholder: 'Pro kit premium box contents – controller, 10m Apa102 12v LED strip reel, 12v power supply, and premium clamps on dark surface',
+            imagePlaceholder: 'Pro kit premium box contents – controller, 10m ws2805 12v LED strip reel, 12v power supply, and premium clamps on dark surface',
         },
     ];
 
