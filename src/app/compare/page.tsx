@@ -6,12 +6,12 @@ import TiltCard from '@/components/effects/TiltCard';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Compare – Fovilight vs Twinkly vs Xiaomi vs Philips Hue',
+  title: 'Compare – Fovilight vs Twinkly vs Xiaomi vs Philips Hue vs Govee',
   description:
-    'See how Fovilight compares to Twinkly, Xiaomi, and Philips Hue. Universal LED support, AI effects, custom scripting, over-current protection, local-first operation – features competitors don\'t offer.',
+    'See how Fovilight compares to Twinkly, Xiaomi, Philips Hue, and Govee. Universal LED support, AI effects, custom scripting, over-current protection, local-first operation – features competitors don\'t offer.',
   alternates: { canonical: 'https://fovibalt.com/compare' },
   openGraph: {
-    title: 'Fovilight vs Twinkly vs Xiaomi vs Philips – LED Controller Comparison',
+    title: 'Fovilight vs Twinkly vs Xiaomi vs Philips vs Govee – LED Controller Comparison',
     description: 'Universal LED support, AI effects, scripting, protection – see why Fovilight leads in 16 feature categories.',
     url: 'https://fovibalt.com/compare',
   },
@@ -19,22 +19,61 @@ export const metadata: Metadata = {
 
 export default function ComparePage() {
     const features = [
-        { name: 'Mobile app', icon: 'smartphone', fovibalt: true, twinkly: true, xiaomi: true, philips: true },
-        { name: 'Eco mode', icon: 'eco', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Overcurrent protection', icon: 'security', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Multiple access', icon: 'group', fovibalt: true, twinkly: false, xiaomi: true, philips: true },
-        { name: 'Grouping', icon: 'workspaces', fovibalt: true, twinkly: true, xiaomi: false, philips: false },
-        { name: 'Local-first', icon: 'hub', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Standby mode', icon: 'dark_mode', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Access control', icon: 'lock', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Virtual controllers', icon: 'developer_board', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'AI effects', icon: 'auto_awesome', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Effect store', icon: 'store', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Custom scripting', icon: 'code', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Universal LED support', icon: 'cable', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Auto LED detection', icon: 'memory', fovibalt: true, twinkly: false, xiaomi: false, philips: false },
-        { name: 'Remote control', icon: 'language', fovibalt: true, twinkly: true, xiaomi: true, philips: true },
-        { name: 'On-the-go (BLE)', icon: 'bluetooth', fovibalt: true, twinkly: false, xiaomi: true, philips: false },
+        // ✅ All five have a mobile app
+        { name: 'Mobile app',             icon: 'smartphone',      fovibalt: true,  twinkly: true,  xiaomi: true,  philips: true,  govee: true  },
+
+        // ✅ Only Fovilight has a dedicated eco mode
+        { name: 'Eco mode',               icon: 'eco',             fovibalt: true,  twinkly: false, xiaomi: false, philips: false, govee: false },
+
+        // ✅ Only Fovilight has built-in overcurrent protection
+        { name: 'Overcurrent protection', icon: 'security',        fovibalt: true,  twinkly: false, xiaomi: false, philips: false, govee: false },
+
+        // ✅ Twinkly has 3-tier home sharing; Xiaomi supports multi-account sharing;
+        //    Philips Hue supports multi-user Homes; Govee added device sharing in v5.7.0
+        { name: 'Multiuser access',        icon: 'group',           fovibalt: true,  twinkly: true,  xiaomi: true,  philips: true,  govee: true  },
+
+        // ✅ Twinkly has grouping; Xiaomi has "Create light group";
+        //    Philips Hue has Rooms & Zones; Govee Home app supports device grouping
+        { name: 'Grouping',               icon: 'workspaces',      fovibalt: true,  twinkly: true,  xiaomi: true,  philips: true,  govee: true  },
+
+        // ✅ Only Fovilight is truly local-first.
+        //    Twinkly requires cloud account even for local use; Xiaomi/Philips are cloud-dependent;
+        //    Govee LAN API is opt-in, limited to select models, and not local-first by design
+        { name: 'Local-first',            icon: 'hub',             fovibalt: true,  twinkly: false, xiaomi: false, philips: false, govee: false },
+
+        // ✅ Only Fovilight has a dedicated standby mode
+        { name: 'Standby mode',           icon: 'dark_mode',       fovibalt: true,  twinkly: false, xiaomi: false, philips: false, govee: false },
+
+        // ✅ Twinkly has 3-tier permission control; Philips Hue admins can manage account permissions.
+        //    Govee sharing is invite-only with no role/permission tiers → no formal access control
+        { name: 'Access control',         icon: 'lock',            fovibalt: true,  twinkly: true,  xiaomi: false, philips: true,  govee: false },
+
+        // ✅ Only Fovilight has virtual controllers
+        { name: 'Virtual controllers',    icon: 'developer_board', fovibalt: true,  twinkly: false, xiaomi: false, philips: false, govee: false },
+
+        // ✅ Govee has CogniGlow AI + AI Lighting Bot 2.0 (hardware sync-box dependent);
+        //    only Fovilight has AI effect generation as a native controller feature
+        { name: 'AI effects',             icon: 'auto_awesome',    fovibalt: true,  twinkly: false, xiaomi: false, philips: false, govee: true  },
+
+        // ✅ Twinkly has an "Explore" effect gallery; Govee has community scene sharing in-app
+        { name: 'Effect store',           icon: 'store',           fovibalt: true,  twinkly: true,  xiaomi: false, philips: false, govee: true  },
+
+        // ✅ Only Fovilight supports custom scripting
+        { name: 'Custom scripting',       icon: 'code',            fovibalt: true,  twinkly: false, xiaomi: false, philips: false, govee: false },
+
+        // ✅ Only Fovilight supports any-brand LED strips universally
+        { name: 'Universal LED support',  icon: 'cable',           fovibalt: true,  twinkly: false, xiaomi: false, philips: false, govee: false },
+
+        // ✅ Only Fovilight has automatic LED type detection
+        { name: 'Auto LED detection',     icon: 'memory',          fovibalt: true,  twinkly: false, xiaomi: false, philips: false, govee: false },
+
+        // ✅ All five support remote control via app / cloud
+        { name: 'Remote control',         icon: 'language',        fovibalt: true,  twinkly: true,  xiaomi: true,  philips: true,  govee: true  },
+
+        // ✅ Govee has extensive BLE support (many models are BLE-primary);
+        //    Xiaomi Mi Home supports BLE for compatible strips;
+        //    Twinkly / Philips use BLE only during initial setup, not for ongoing control
+        { name: 'On-the-go (BLE)',        icon: 'bluetooth',       fovibalt: true,  twinkly: false, xiaomi: true,  philips: false, govee: true  },
     ];
 
     const Check = () => <i className={`material-icons ${styles.checkIcon}`}>check_circle</i>;
@@ -43,6 +82,7 @@ export default function ComparePage() {
     return (
         <>
             <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Compare', url: '/compare' }]} />
+
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">
             <section className={styles.pageHero}>
@@ -62,11 +102,12 @@ export default function ComparePage() {
                         <table className={styles.comparisonTable}>
                             <thead>
                                 <tr>
-                                    <th>Status</th>
+                                    <th>Feature</th>
                                     <th className={styles.highlightCol}>Fovibalt</th>
                                     <th>Twinkly</th>
                                     <th>Xiaomi</th>
                                     <th>Philips</th>
+                                    <th>Govee</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,9 +120,10 @@ export default function ComparePage() {
                                         <td className={i === features.length - 1 ? styles.highlightCellBottom : styles.highlightCell}>
                                             {feature.fovibalt ? <Check /> : <Cross />}
                                         </td>
-                                        <td>{feature.twinkly ? <Check /> : <Cross />}</td>
-                                        <td>{feature.xiaomi ? <Check /> : <Cross />}</td>
-                                        <td>{feature.philips ? <Check /> : <Cross />}</td>
+                                        <td>{feature.twinkly  ? <Check /> : <Cross />}</td>
+                                        <td>{feature.xiaomi   ? <Check /> : <Cross />}</td>
+                                        <td>{feature.philips  ? <Check /> : <Cross />}</td>
+                                        <td>{feature.govee    ? <Check /> : <Cross />}</td>
                                     </tr>
                                 ))}
                             </tbody>

@@ -380,6 +380,16 @@
     font-size: 20px;
 }
 
+.partialIcon {
+    color: #fbbf24;
+    font-size: 20px;
+}
+
+.unknownIcon {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 20px;
+}
+
 .crossIcon {
     color: rgba(255, 255, 255, 0.2);
     font-size: 20px;
