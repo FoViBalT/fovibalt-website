@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
 import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
@@ -56,9 +57,22 @@ export default function TechnologyPage() {
                                 about compatibility. Simply connect your LED strip and fovilight handles everything automatically.
                             </p>
                         </div>
-                        <div className={styles.imagePlaceholder}>
-                            <i className="material-icons">memory</i>
-                            Diagram showing LedID detection flow - LED strip plugged in, controller analyzing signal, screen showing detected parameters (type: WS2812, length: 5m, LEDs: 150)
+                        <div className={styles.imagePlaceholder} style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
+                            <Image
+                                src="/images/img/led_id.png"
+                                alt="Diagram showing LedID detection flow - LED strip plugged in, controller analyzing signal, screen showing detected parameters (type: WS2812, length: 5m, LEDs: 150)"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                style={{ objectFit: 'cover' }}
+                            />
+                            {/**
+                             * Placeholder (kept for reference)
+                             *
+                             * <div className={styles.imagePlaceholder}>
+                             *     <i className="material-icons">memory</i>
+                             *     Diagram showing LedID detection flow - LED strip plugged in, controller analyzing signal, screen showing detected parameters (type: WS2812, length: 5m, LEDs: 150)
+                             * </div>
+                             */}
                         </div>
                     </div>
                 </div>
@@ -241,9 +255,22 @@ export default function TechnologyPage() {
                                 This keeps mobile usage simple while maintaining local-first behavior when internet is unavailable.
                             </p>
                         </div>
-                        <div className={styles.imagePlaceholder}>
-                            <i className="material-icons">bluetooth</i>
-                            Fovilight used on-the-go with phone connected over BLE for quick local control
+                        <div className={styles.imagePlaceholder} style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
+                            <Image
+                                src="/images/img/device_conenction_ble.png"
+                                alt="Fovilight used on-the-go with phone connected over BLE for quick local control"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                style={{ objectFit: 'cover' }}
+                            />
+                            {/**
+                             * Placeholder (kept for reference)
+                             *
+                             * <div className={styles.imagePlaceholder}>
+                             *     <i className="material-icons">bluetooth</i>
+                             *     Fovilight used on-the-go with phone connected over BLE for quick local control
+                             * </div>
+                             */}
                         </div>
                     </div>
                 </div>

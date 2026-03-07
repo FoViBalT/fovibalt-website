@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
 import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
@@ -72,9 +73,22 @@ export default function SetupPage() {
                                     After selecting the controller, choose your Wi-Fi network in the app and complete the connection.
                                 </p>
                             </div>
-                            <div className={styles.imagePlaceholder}>
-                                <i className="material-icons">bluetooth_searching</i>
-                                Phone app showing available fovilight devices over BLE with one selected for Wi-Fi provisioning
+                            <div className={styles.imagePlaceholder} style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
+                                <Image
+                                    src="/images/img/device_conenction_ble.png"
+                                    alt="Phone app showing available fovilight devices over BLE with one selected for Wi-Fi provisioning"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    style={{ objectFit: 'cover' }}
+                                />
+                                {/**
+                                 * Placeholder (kept for reference)
+                                 *
+                                 * <div className={styles.imagePlaceholder}>
+                                 *     <i className="material-icons">bluetooth_searching</i>
+                                 *     Phone app showing available fovilight devices over BLE with one selected for Wi-Fi provisioning
+                                 * </div>
+                                 */}
                             </div>
                         </div>
 

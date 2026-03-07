@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
 import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
@@ -30,6 +31,7 @@ export default function BundlesPage() {
             idealFor: 'Upgrading existing LED setups to smart control',
             icon: 'swap_horiz',
             imagePlaceholder: 'Fovilight controller unit in retail packaging – clean shot on dark surface, connector cables visible beside it',
+            imageSrc: '/images/img/device-replacement.JPG',
         },
         {
             name: 'Starter kit',
@@ -44,6 +46,7 @@ export default function BundlesPage() {
             idealFor: 'First-time LED users who want a complete solution',
             icon: 'inventory_2',
             imagePlaceholder: 'Starter kit box contents laid out – controller, 12v ws2815 5m LED strip, 12v adapter, and clamps arranged on dark surface',
+            imageSrc: '/images/img/device-starter.JPG',
         },
         {
             name: 'Pro kit',
@@ -58,6 +61,7 @@ export default function BundlesPage() {
             idealFor: 'Whole-room installations, professional setups, enthusiasts',
             icon: 'star',
             imagePlaceholder: 'Pro kit premium box contents – controller, 10m ws2805 12v LED strip reel, 12v power supply, and premium clamps on dark surface',
+            imageSrc: '/images/img/device-pro.JPG',
         },
     ];
 
@@ -141,9 +145,22 @@ export default function BundlesPage() {
                                         </p>
                                         <button type="button" className={styles.bundleBuyBtn}>Buy</button>
                                     </div>
-                                    <div className={styles.imagePlaceholder}>
-                                        <i className="material-icons">{bundle.icon}</i>
-                                        {bundle.imagePlaceholder}
+                                    <div className={styles.imagePlaceholder} style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
+                                        <Image
+                                            src={bundle.imageSrc}
+                                            alt={bundle.imagePlaceholder}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            style={{ objectFit: 'cover' }}
+                                        />
+                                        {/**
+                                         * Placeholder (kept for reference)
+                                         *
+                                         * <div className={styles.imagePlaceholder}>
+                                         *     <i className="material-icons">{bundle.icon}</i>
+                                         *     {bundle.imagePlaceholder}
+                                         * </div>
+                                         */}
                                     </div>
                                 </div>
                             </TiltCard>

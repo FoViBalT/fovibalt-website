@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './page.module.css';
 import ControllerRotation from '@/components/effects/ControllerRotation';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
@@ -103,10 +104,21 @@ export default function HomeClient() {
                 <div className={styles.productInfoInner}>
                     <RevealOnScroll variant="fadeLeft">
                         <div className={styles.qrImageWrapper}>
-                            <div className={styles.imagePlaceholder}>
-                                <i className="material-icons">bluetooth_connected</i>
-                                Fovilight device shown in BLE pairing mode with nearby phone discovering it in the app device list
-                            </div>
+                            <Image
+                                src="/images/img/device_conenction_ble.png"
+                                alt="Fovilight device shown in BLE pairing mode with nearby phone discovering it in the app device list"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 320px"
+                                style={{ objectFit: 'cover' }}
+                            />
+                            {/**
+                             * Placeholder (kept for reference)
+                             *
+                             * <div className={styles.imagePlaceholder}>
+                             *     <i className="material-icons">bluetooth_connected</i>
+                             *     Fovilight device shown in BLE pairing mode with nearby phone discovering it in the app device list
+                             * </div>
+                             */}
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeRight" delay={150}>
@@ -154,10 +166,21 @@ export default function HomeClient() {
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeRight" delay={150}>
                         <div className={styles.featureImage}>
-                            <div className={styles.imagePlaceholder}>
-                                <i className="material-icons">memory</i>
-                                Close-up of fovilight controller with LED strip auto-detecting – screen/indicator showing detected strip type and length
-                            </div>
+                            <Image
+                                src="/images/img/led_id.png"
+                                alt="Close-up of fovilight controller with LED strip auto-detecting – screen/indicator showing detected strip type and length"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                style={{ objectFit: 'cover' }}
+                            />
+                            {/**
+                             * Placeholder (kept for reference)
+                             *
+                             * <div className={styles.imagePlaceholder}>
+                             *     <i className="material-icons">memory</i>
+                             *     Close-up of fovilight controller with LED strip auto-detecting – screen/indicator showing detected strip type and length
+                             * </div>
+                             */}
                         </div>
                     </RevealOnScroll>
                 </div>
@@ -180,10 +203,21 @@ export default function HomeClient() {
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeLeft" delay={150}>
                         <div className={styles.featureImage}>
-                            <div className={styles.imagePlaceholder}>
-                                <i className="material-icons">auto_awesome</i>
-                                Mobile app AI chat interface – user typing lighting effect description, colorful preview of generated effect below
-                            </div>
+                            <Image
+                                src="/images/img/ai.png"
+                                alt="Mobile app AI chat interface – user typing lighting effect description, colorful preview of generated effect below"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                style={{ objectFit: 'cover' }}
+                            />
+                            {/**
+                             * Placeholder (kept for reference)
+                             *
+                             * <div className={styles.imagePlaceholder}>
+                             *     <i className="material-icons">auto_awesome</i>
+                             *     Mobile app AI chat interface – user typing lighting effect description, colorful preview of generated effect below
+                             * </div>
+                             */}
                         </div>
                     </RevealOnScroll>
                 </div>
@@ -206,10 +240,21 @@ export default function HomeClient() {
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeRight" delay={150}>
                         <div className={styles.featureImage}>
-                            <div className={styles.imagePlaceholder}>
-                                <i className="material-icons">store</i>
-                                Effect store marketplace grid – showing various community-made lighting effect thumbnails with ratings and download counts
-                            </div>
+                            <Image
+                                src="/images/img/marketplace.png"
+                                alt="Effect store marketplace grid – showing various community-made lighting effect thumbnails with ratings and download counts"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                style={{ objectFit: 'cover' }}
+                            />
+                            {/**
+                             * Placeholder (kept for reference)
+                             *
+                             * <div className={styles.imagePlaceholder}>
+                             *     <i className="material-icons">store</i>
+                             *     Effect store marketplace grid – showing various community-made lighting effect thumbnails with ratings and download counts
+                             * </div>
+                             */}
                         </div>
                     </RevealOnScroll>
                 </div>
@@ -259,18 +304,21 @@ export default function HomeClient() {
                             title: 'Replacement kit',
                             icon: 'swap_horiz',
                             imgDesc: 'Fovilight controller unit alone – clean product photo on dark surface',
+                            imgSrc: '/images/img/device-replacement.JPG',
                             features: ['Fovilight controller', 'Different clamps to connect LED strip'],
                         },
                         {
                             title: 'Starter kit',
                             icon: 'inventory_2',
                             imgDesc: 'Starter bundle box – controller, 12v WS2815 5m LED strip, 12v power supply, and clamps neatly arranged',
+                            imgSrc: '/images/img/device-starter.JPG',
                             features: ['Fovilight controller', '12v ws2815 5m LED strip', '12v power supply', 'Different clamps to connect LED strip'],
                         },
                         {
                             title: 'Pro kit',
                             icon: 'star',
                             imgDesc: 'Pro bundle box – controller, 10m WS2805 12v LED strip, 12v power supply, premium clamps, and accessories',
+                            imgSrc: '/images/img/device-pro.JPG',
                             features: ['Fovilight controller', '10m WS2805 12v LED strip', '12v power supply', 'Different clamps to connect LED strip'],
                         },
                     ].map((bundle, i) => (
@@ -278,9 +326,22 @@ export default function HomeClient() {
                             <TiltCard className={styles.bundleCard} glowColor="rgba(89,126,255,0.3)">
                                 <h3 className={styles.bundleTitle}>{bundle.title}</h3>
                                 <div className={styles.bundleImageWrapper}>
-                                    <div className={styles.imagePlaceholder}>
-                                        <i className="material-icons">{bundle.icon}</i>
-                                        {bundle.imgDesc}
+                                    <div className={styles.imagePlaceholder} style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
+                                        <Image
+                                            src={bundle.imgSrc}
+                                            alt={bundle.imgDesc}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                            style={{ objectFit: 'cover' }}
+                                        />
+                                        {/**
+                                         * Placeholder (kept for reference)
+                                         *
+                                         * <div className={styles.imagePlaceholder}>
+                                         *     <i className="material-icons">{bundle.icon}</i>
+                                         *     {bundle.imgDesc}
+                                         * </div>
+                                         */}
                                     </div>
                                 </div>
                                 <ul className={styles.bundleFeatures}>
