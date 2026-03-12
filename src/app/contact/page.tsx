@@ -17,9 +17,32 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  '@id': 'https://fovibalt.com/contact/#webpage',
+  url: 'https://fovibalt.com/contact',
+  name: 'Contact Fovibalt',
+  isPartOf: { '@id': 'https://fovibalt.com/#website' },
+  description:
+    'Contact Fovibalt for questions about Fovilight, beta testing, collaboration, or joining the team. Reach us at info@fovibalt.com.',
+  inLanguage: 'en-US',
+  mainEntity: {
+    '@type': 'Organization',
+    '@id': 'https://fovibalt.com/#organization',
+    name: 'Fovibalt',
+    email: 'info@fovibalt.com',
+    url: 'https://fovibalt.com',
+  },
+};
+
 export default function ContactPage() {
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">

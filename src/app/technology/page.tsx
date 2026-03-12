@@ -17,6 +17,33 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://fovibalt.com/technology/#webpage',
+      url: 'https://fovibalt.com/technology',
+      name: 'Fovilight Technology – LedID™, AI Effects & Lua Scripting',
+      isPartOf: { '@id': 'https://fovibalt.com/#website' },
+      description:
+        'Learn about Fovilight\'s core technology: LedID™ auto-detection for 20+ LED types, AI effect generation, Lua scripting, versatile 5-24V power, BLE connectivity, and local-first operation.',
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': 'TechArticle',
+      headline: 'LedID™ Auto-Detection Technology',
+      description:
+        'LedID™ automatically identifies connected LED strips — detecting communication protocol, strip length, and fault conditions within seconds.',
+      author: { '@id': 'https://fovibalt.com/#organization' },
+      publisher: { '@id': 'https://fovibalt.com/#organization' },
+      mainEntityOfPage: { '@id': 'https://fovibalt.com/technology/#webpage' },
+      proficiencyLevel: 'Beginner',
+      inLanguage: 'en-US',
+    },
+  ],
+};
+
 export default function TechnologyPage() {
     const ledStripTypes = [
         'WS2811', 'WS2812', 'WS2812B', 'WS2813', 'WS2814', 'WS2815', 'WS2818', 'WS2801',
@@ -26,6 +53,10 @@ export default function TechnologyPage() {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Technology', url: '/technology' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">

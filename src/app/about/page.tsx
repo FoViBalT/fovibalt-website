@@ -17,6 +17,35 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': 'https://fovibalt.com/about/#webpage',
+      url: 'https://fovibalt.com/about',
+      name: 'About Fovibalt – The Team Behind the Universal LED Controller',
+      isPartOf: { '@id': 'https://fovibalt.com/#website' },
+      description:
+        'Meet the Fovibalt team building the only universal LED strip controller with LedID™ technology, AI effects, and local-first smart lighting.',
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://fovibalt.com/#organization',
+      name: 'Fovibalt',
+      url: 'https://fovibalt.com',
+      description:
+        'Fovibalt builds Fovilight — the only universal LED strip controller with LedID™ auto-detection, AI effects, and local-first operation.',
+      foundingDate: '2024',
+      member: [
+        { '@type': 'Person', name: 'Nikita', jobTitle: 'Hardware, firmware, software, and product' },
+        { '@type': 'Person', name: 'Vlad', jobTitle: 'Hardware, firmware, software, and product' },
+      ],
+    },
+  ],
+};
+
 export default function AboutPage() {
     const team = [
         { name: 'Nikita', role: 'Hardware, firmware, software, and product', initial: 'N' },
@@ -25,6 +54,10 @@ export default function AboutPage() {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">

@@ -17,9 +17,65 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://fovibalt.com/setup/#webpage',
+      url: 'https://fovibalt.com/setup',
+      name: 'Fovilight 3-Step Setup Guide',
+      isPartOf: { '@id': 'https://fovibalt.com/#website' },
+      description:
+        'Set up Fovilight in 3 easy steps: connect your LED strip, pair, and enjoy full smart lighting control.',
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': 'HowTo',
+      name: 'How to Set Up Fovilight Universal LED Controller',
+      description:
+        'Set up your Fovilight LED controller in 3 easy steps. No technical knowledge required.',
+      totalTime: 'PT5M',
+      tool: [
+        { '@type': 'HowToTool', name: 'Fovilight controller' },
+        { '@type': 'HowToTool', name: 'LED strip' },
+        { '@type': 'HowToTool', name: 'Power supply (USB-C, barrel jack, or screw terminal)' },
+        { '@type': 'HowToTool', name: 'Fovilight mobile app' },
+      ],
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Connect',
+          text: 'Connect your LED strip to the Fovilight controller using the appropriate connector. Then connect your power supply via USB-C, barrel jack, or screw terminal. LedID™ automatically detects the strip type, protocol, and length.',
+          url: 'https://fovibalt.com/setup',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Select device and connect to Wi-Fi',
+          text: 'Open the Fovilight mobile app, choose your controller from the list of available devices, then select your Wi-Fi network and complete the connection.',
+          url: 'https://fovibalt.com/setup',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Enjoy',
+          text: 'Enter your home Wi-Fi network name and password in the app. The Fovilight controller connects to your network and is ready to use. Control your lights locally or from anywhere.',
+          url: 'https://fovibalt.com/setup',
+        },
+      ],
+    },
+  ],
+};
+
 export default function SetupPage() {
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Setup', url: '/setup' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">

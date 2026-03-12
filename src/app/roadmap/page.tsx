@@ -17,6 +17,18 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://fovibalt.com/roadmap/#webpage',
+  url: 'https://fovibalt.com/roadmap',
+  name: 'Fovilight Product Roadmap – Milestones & Upcoming Features',
+  isPartOf: { '@id': 'https://fovibalt.com/#website' },
+  description:
+    'Track Fovilight progress: completed prototype, mobile app, and web platform. Upcoming: scenes, LED strip splitting, sensor automation, Effect Store, and mass production.',
+  inLanguage: 'en-US',
+};
+
 export default function RoadmapPage() {
     const completed = [
         {
@@ -86,6 +98,10 @@ export default function RoadmapPage() {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Roadmap', url: '/roadmap' }]} />
             {/* Hero */}
             <RevealOnScroll variant="fadeUp">

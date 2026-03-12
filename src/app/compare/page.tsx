@@ -17,6 +17,18 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://fovibalt.com/compare/#webpage',
+  url: 'https://fovibalt.com/compare',
+  name: 'Fovilight vs Twinkly vs Xiaomi vs Philips Hue vs Govee',
+  isPartOf: { '@id': 'https://fovibalt.com/#website' },
+  description:
+    'See how Fovilight compares to Twinkly, Xiaomi, Philips Hue, and Govee across 16 feature categories including universal LED support, AI effects, custom scripting, and local-first operation.',
+  inLanguage: 'en-US',
+};
+
 export default function ComparePage() {
     const features = [
         // ✅ All five have a mobile app
@@ -81,6 +93,10 @@ export default function ComparePage() {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Compare', url: '/compare' }]} />
 
             {/* Hero */}
