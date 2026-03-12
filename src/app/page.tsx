@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import HomeClient from './HomeClient';
 
 export const metadata: Metadata = {
-  title: 'Fovilight – The Only Universal LED Strip Controller | LedID™ Auto-Detection & AI Effects',
+  title: 'Fovilight - The Only Universal LED Strip Controller | LedID™ Auto-Detection & AI Effects',
   description:
     'Fovilight supports 20+ LED strip types with LedID™ auto-detection, AI-powered effects, Lua scripting, BLE pairing, and local-first control. 3-step setup. Works with WS2812, SK6812, APA102, RGBW, and more.',
   alternates: { canonical: 'https://fovibalt.com' },
   openGraph: {
-    title: 'Fovilight – The Only Universal LED Strip Controller',
+    title: 'Fovilight - The Only Universal LED Strip Controller',
     description:
       '20+ LED types supported. LedID™ auto-detection. AI effects. Lua scripting. BLE setup. Local-first.',
     url: 'https://fovibalt.com',
@@ -43,7 +43,7 @@ const jsonLd = {
       '@type': 'WebPage',
       '@id': 'https://fovibalt.com/#webpage',
       url: 'https://fovibalt.com',
-      name: 'Fovilight – The Only Universal LED Strip Controller',
+      name: 'Fovilight - The Only Universal LED Strip Controller',
       isPartOf: { '@id': 'https://fovibalt.com/#website' },
       about: { '@id': 'https://fovibalt.com/#organization' },
       description:
