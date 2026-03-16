@@ -60,12 +60,13 @@ const jsonLd = {
       category: 'LED Controllers',
       url: 'https://fovibalt.com/bundles',
       image: 'https://fovibalt.com/images/og-cover.png',
-      offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/PreOrder',
-        offerCount: 3,
-      },
+
+      // offers: {
+      //   '@type': 'AggregateOffer',
+      //   priceCurrency: 'EUR',
+      //   availability: 'https://schema.org/PreOrder',
+      //   offerCount: 3,
+      // },
     },
     {
       '@type': 'FAQPage',
