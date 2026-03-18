@@ -115,10 +115,10 @@ export default function ImageComparisonSlider({ imgLeft, imgRight }: any) {
     return (
             <div className={styles.img_comp_container}>
                 <div className={styles.img_comp_img}>
-                    <Image src={imgRight} alt={''} fill={true} unoptimized/>
+                    <Image src={imgRight} alt={''} fill={true} />
                 </div>
                 <div className={`${styles.img_comp_img} img-comp-overlay`} ref={overlayRef}>
-                    <Image src={imgLeft} alt={''} fill={true} unoptimized/>
+                    <Image src={imgLeft} alt={''} fill={true} />
                 </div>
             </div>
     );

@@ -1,6 +1,9 @@
 ### Example user template template
 ### Example user template
 
+# Image backup (from compress-images script)
+public/images-backup/
+
 # IntelliJ project files
 .idea
 *.iml
