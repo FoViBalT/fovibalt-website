@@ -50,24 +50,24 @@ const jsonLd = {
         'Fovilight supports 20+ LED strip types with LedID™ auto-detection, AI effects, Lua scripting, BLE setup, and local-first control.',
       inLanguage: 'en-US',
     },
-    {
-      '@type': 'Product',
-      '@id': 'https://fovibalt.com/#product',
-      name: 'Fovilight Universal LED Strip Controller',
-      description:
-        'The only universal LED strip controller supporting 20+ LED types. Features LedID™ auto-detection, AI effects, Lua scripting, over-current and over-voltage protection, BLE pairing, and local-first control.',
-      brand: { '@type': 'Brand', name: 'Fovibalt' },
-      category: 'LED Controllers',
-      url: 'https://fovibalt.com/bundles',
-      image: 'https://fovibalt.com/images/og-cover.png',
+    // {
+    //   '@type': 'Product',
+    //   '@id': 'https://fovibalt.com/#product',
+    //   name: 'Fovilight Universal LED Strip Controller',
+    //   description:
+    //     'The only universal LED strip controller supporting 20+ LED types. Features LedID™ auto-detection, AI effects, Lua scripting, over-current and over-voltage protection, BLE pairing, and local-first control.',
+    //   brand: { '@type': 'Brand', name: 'Fovibalt' },
+    //   category: 'LED Controllers',
+    //   url: 'https://fovibalt.com/bundles',
+    //   image: 'https://fovibalt.com/images/og-cover.png',
 
-      // offers: {
-      //   '@type': 'AggregateOffer',
-      //   priceCurrency: 'EUR',
-      //   availability: 'https://schema.org/PreOrder',
-      //   offerCount: 3,
-      // },
-    },
+    //   offers: {
+    //     '@type': 'AggregateOffer',
+    //     priceCurrency: 'EUR',
+    //     availability: 'https://schema.org/PreOrder',
+    //     offerCount: 3,
+    //   },
+    // },
     {
       '@type': 'FAQPage',
       mainEntity: [
