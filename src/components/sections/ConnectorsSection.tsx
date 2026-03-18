@@ -1,7 +1,6 @@
 'use client';
 
 import styles from "./ConnectorsSection.module.css";
-import Image from "next/image";
 import RadialGradientHighlight from "../parts/RadialGradientHighlight";
 import {useEffect, useRef} from "react";
 import {useInView} from "react-intersection-observer";
@@ -48,15 +47,9 @@ export default function ConnectorsSection() {
             )
 
             const preloadImages = () => {
-                if (image.current) {
-                    let images: HTMLImageElement[] = [];
-                    for (let i = 1; i < frameCount; i++) {
-                        const img = new window.Image();
-                        img.src = currentFrame(i);
-                        images.push(img);
-                        console.log('preload', i)
-                    }
-                    images = []
+                for (let i = 1; i <= frameCount; i++) {
+                    const img = new window.Image();
+                    img.src = currentFrame(i);
                 }
             };
 
@@ -186,7 +179,7 @@ export default function ConnectorsSection() {
                 }
             }
 
-            window.addEventListener('scroll', () => {
+            const onScroll = () => {
                 if (container.current && image.current) {
                     const containerHeight = container.current.scrollHeight - image.current.clientHeight - buffer;
                     const containerTop = container.current.offsetTop;
@@ -221,13 +214,18 @@ export default function ConnectorsSection() {
                         changeEffect(5)
                     }
                 }
-            });
+            };
+
+            window.addEventListener('scroll', onScroll);
 
             preloadImages()
 
             image.current.src = currentFrame(1);
+
+            return () => window.removeEventListener('scroll', onScroll);
         }
-    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <section ref={container} className={styles.sectionWrapper}>
@@ -251,14 +249,12 @@ export default function ConnectorsSection() {
 
                     <div className={styles.imageHolder}>
                         <RadialGradientHighlight content={
-                            <Image
-                                className={`${styles.fade_in}`}
+                            <img
+                                className={`${styles.fade_in} ${styles.frameImage}`}
                                 ref={image}
                                 src={''}
                                 alt={'alt'}
-                                fill={true}
-                                loading="eager">
-                            </Image>
+                            />
                         }>
                         </RadialGradientHighlight>
                     </div>

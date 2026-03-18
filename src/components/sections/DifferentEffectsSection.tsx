@@ -19,7 +19,7 @@ export default function DifferentEffectsSection() {
             fill={true}
             src="/images/differentEffects.png"
             alt=""
-            priority={true}
+            sizes="(max-width: 768px) 90vw, 45vw"
         ></Image>
     }
 

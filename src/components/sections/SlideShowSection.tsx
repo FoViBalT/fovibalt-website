@@ -79,7 +79,7 @@ export default function SlideShowSection() {
             }
 
 
-            window.addEventListener('scroll', () => {
+            const onScroll = () => {
                 if (container.current && img1.current) {
                     const containerHeight = container.current.scrollHeight - img1.current.clientHeight;
                     const containerTop = container.current.offsetTop;
@@ -101,9 +101,14 @@ export default function SlideShowSection() {
                         changeEffect(0)
                     }
                 }
-            });
+            };
+
+            window.addEventListener('scroll', onScroll);
+
+            return () => window.removeEventListener('scroll', onScroll);
         }
-    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <section ref={container} className={styles.sectionWrapper}>
@@ -112,24 +117,24 @@ export default function SlideShowSection() {
                     <h3 className={`${styles.heading} ${styles.colorful}`}>
                         Control all the lights at home with fovilight
                     </h3>
-                    <div>
-                        <Image className={styles.coverImage} src={'/images/teamImage.png'} alt={"Team's image"} fill={true}/>
+                    <div className={styles.imgWrapper}>
+                        <Image className={styles.coverImage} src={'/images/teamImage.png'} alt={"Team's image"} fill={true} sizes="100vw"/>
                     </div>
                 </div>
                 <div ref={img2} className={`${styles.fade_out} ${styles.container}`}>
                     <h3 className={`${styles.heading}`}>
                         Upgrade filming gear with fovilight
                     </h3>
-                    <div>
-                        <Image className={styles.coverImage} src={'/images/filmingGear.png'} alt={"Filming gear image"} fill={true}/>
+                    <div className={styles.imgWrapper}>
+                        <Image className={styles.coverImage} src={'/images/filmingGear.png'} alt={"Filming gear image"} fill={true} sizes="100vw"/>
                     </div>
                 </div>
                 <div ref={img3} className={`${styles.fade_out} ${styles.container}`}>
                     <h3 className={`${styles.heading} ${styles.colorBlue}`}>
                         fovilight for shows & concerts
                     </h3>
-                    <div>
-                        <Image className={styles.coverImage} src={'/images/fovilightForConcerts.png'} alt={"Filming gear image"} fill={true}/>
+                    <div className={styles.imgWrapper}>
+                        <Image className={styles.coverImage} src={'/images/fovilightForConcerts.png'} alt={"Filming gear image"} fill={true} sizes="100vw"/>
                     </div>
                 </div>
                 <div ref={img4} className={`${styles.fade_in} ${styles.container}`}>

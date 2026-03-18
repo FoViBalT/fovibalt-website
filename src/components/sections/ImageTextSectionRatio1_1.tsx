@@ -11,7 +11,7 @@ export default function ImageTextSectionRatio1_1() {
             fill={true}
             src="/images/dreams.png"
             alt=""
-            priority={true}
+            sizes="(max-width: 768px) 70vw, 45vw"
         ></Image>
     }
 

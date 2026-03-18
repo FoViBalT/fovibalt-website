@@ -78,7 +78,7 @@ export default function ImageListSectionRatio2_3() {
                         fill={true}
                         src="/images/phoneApp.png"
                         alt=""
-                        priority={true}
+                        sizes="(max-width: 768px) 90vw, 40vw"
                         style={{color: "none"}}
                     ></Image>
                 </div>

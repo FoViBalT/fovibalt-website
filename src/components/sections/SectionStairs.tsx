@@ -59,10 +59,10 @@ export default function SectionStairs({ LEDStrips }: { LEDStrips: SectionStairsP
                                      paddingLeft: `calc(25% / ${LEDStrips.length} * ${LEDStrips.length - index} )`,
                                      animationDelay: inView ? `${index * 0.15}s` : '' }}>
                                 <span className={styles.StairsImg}><Image
-                                    layout={'fill'}
+                                    fill={true}
                                     src={LEDStrip.LEDStripImg}
                                     alt={`Example of ${LEDStrip.LEDStripType}`}
-                                    priority={false}
+                                    sizes="80vw"
                                 ></Image></span>
                                 <span className={styles.StairsText}>{LEDStrip.LEDStripType}</span>
                             </div>

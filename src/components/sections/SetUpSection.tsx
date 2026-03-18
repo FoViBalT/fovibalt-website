@@ -1,7 +1,6 @@
 'use client';
 
 import styles from "./SetUpSection.module.css";
-import Image from "next/image";
 import {useEffect, useRef} from "react";
 export default function SetUpSection() {
 
@@ -28,15 +27,9 @@ export default function SetUpSection() {
             )
 
             const preloadImages = () => {
-                if (image.current) {
-                    let images: HTMLImageElement[] = [];
-                    for (let i = 1; i < frameCount; i++) {
-                        const img = new window.Image();
-                        img.src = currentFrame(i);
-                        images.push(img);
-                        console.log('preload', i)
-                    }
-                    images = []
+                for (let i = 1; i <= frameCount; i++) {
+                    const img = new window.Image();
+                    img.src = currentFrame(i);
                 }
             };
 
@@ -78,7 +71,7 @@ export default function SetUpSection() {
                 }
             }
 
-            window.addEventListener('scroll', () => {
+            const onScroll = () => {
                 if (container.current && image.current) {
                     const containerHeight = container.current.scrollHeight - image.current.clientHeight - buffer;
                     const containerTop = container.current.offsetTop;
@@ -106,13 +99,18 @@ export default function SetUpSection() {
                         changeFadeInTo()
                     }
                 }
-            });
+            };
+
+            window.addEventListener('scroll', onScroll);
 
             preloadImages()
 
             image.current.src = currentFrame(1);
+
+            return () => window.removeEventListener('scroll', onScroll);
         }
-    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
 
     return (
@@ -121,20 +119,17 @@ export default function SetUpSection() {
                 <h3 className={styles.title}>3 step setup & configuration</h3>
                 <div className={styles.twoColumnContainer}>
                         <div className={styles.imageHolder}>
-                            <Image
-                                className={`${styles.imageSetup} ${styles.fade_out}`}
+                            <img
+                                className={`${styles.imageSetup} ${styles.frameImage} ${styles.fade_out}`}
                                 ref={image}
                                 src={''}
                                 alt={'alt'}
-                                fill={true}
-                                priority={true}>
-                            </Image>
-                            <Image ref={enterSSID}
-                                className={`${styles.enterSSID} ${styles.fade_out}`}
+                            />
+                            <img ref={enterSSID}
+                                className={`${styles.enterSSID} ${styles.frameImage} ${styles.fade_out}`}
                                 src={'/images/enterSSID.png'}
                                 alt={'alt'}
-                                fill={true}>
-                            </Image>
+                            />
                         </div>
                         <div className={styles.textHolder}>
                             <p ref={text1} className={`${styles.text} ${styles.fade_out}`}>Step 1: Connect LED strip and power</p>

@@ -16,7 +16,7 @@ export default function ImageTextSectionRatio2_3() {
             fill={true}
             src="/images/universal.png"
             alt=""
-            priority={true}
+            sizes="(max-width: 768px) 90vw, 40vw"
         ></Image>
     }
 

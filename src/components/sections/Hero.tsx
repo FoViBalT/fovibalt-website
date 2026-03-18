@@ -17,6 +17,7 @@ export default function Hero() {
             src="/images/fovilight.png"
             alt=""
             priority={true}
+            sizes="(max-width: 768px) 90vw, 80vw"
             ></Image>
         </div>
         </div>
