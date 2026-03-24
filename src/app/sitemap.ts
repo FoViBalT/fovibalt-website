@@ -2,7 +2,11 @@ import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://fovibalt.com';
-  const lastModified = new Date();
+
+  // Use a fixed date — update this when page content actually changes.
+  // Using new Date() generates a fresh timestamp on every fetch, which
+  // makes Google distrust the sitemap and deprioritise re-crawling.
+  const lastModified = new Date('2025-03-24T00:00:00Z');
 
   return [
     {

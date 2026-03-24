@@ -40,9 +40,7 @@ export default function Footer() {
                 <div className={styles.footerBottom}>
                     <span className={styles.copyright}>© 2026 Fovibalt. All rights reserved.</span>
                     <div className={styles.footerSocials}>
-                        <a href="#" aria-label="Twitter">𝕏</a>
-                        <a href="https://www.instagram.com/fovibalt/" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="https://www.instagram.com/fovibalt/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
                     </div>
                 </div>
             </div>

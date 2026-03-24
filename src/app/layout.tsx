@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import { Open_Sans } from 'next/font/google'
 import './globals.css'
 import SiteHeader from '@/components/parts/SiteHeader'
 import Footer from '@/components/parts/Footer'
@@ -7,6 +8,11 @@ import ScrollGlow from '@/components/effects/ScrollGlow'
 import MouseSpotlight from '@/components/effects/MouseSpotlight'
 
 const FuturaDemiC = localFont({ src: '../../public/fonts/futurademic.ttf' })
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-open-sans',
+})
 
 const SITE_URL = 'https://fovibalt.com';
 
@@ -65,8 +71,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/images/og-cover.png',
-        width: 1200,
-        height: 630,
+        width: 1920,
+        height: 1080,
         alt: 'Fovilight universal LED strip controller',
       },
     ],
@@ -96,13 +102,13 @@ export default function RootLayout({
 }) {
 
   return (
-    <html lang="en">
+    <html lang="en" className={openSans.variable}>
     <head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+      {/* Material Icons loaded with display=swap to avoid render-blocking */}
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
     </head>
       <body className={FuturaDemiC.className}>
         <div className="appShell">
