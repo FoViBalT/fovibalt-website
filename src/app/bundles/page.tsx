@@ -143,7 +143,7 @@ export default function BundlesPage() {
                                         }}>
                                             Ideal for: {bundle.idealFor}
                                         </p>
-                                        <button type="button" className={styles.bundleBuyBtn}>Buy</button>
+                                        <Link href="/contact" className={styles.bundleBuyBtn} style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>Join waitlist</Link>
                                     </div>
                                     <div className={styles.imagePlaceholder} style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
                                         <Image

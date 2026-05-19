@@ -3,6 +3,7 @@ import RevealOnScroll from '@/components/effects/RevealOnScroll';
 import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import TiltCard from '@/components/effects/TiltCard';
 import ContactForm from '@/components/parts/ContactForm';
+import WaitlistForm from '@/components/parts/WaitlistForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -61,7 +62,13 @@ export default function ContactPage() {
                 <div className={styles.container}>
                     <div className={styles.twoColGrid}>
                         <div>
-                            <h2 className={`${styles.sectionHeading} ${styles.sectionHeadingGradient}`}>Get in touch</h2>
+                            <h2 className={`${styles.sectionHeading} ${styles.sectionHeadingGradient}`}>Join Waitlist</h2>
+                            <p className={styles.sectionSubtext} style={{ marginBottom: '24px' }}>
+                                Sign up with your email to get notified when we launch.
+                            </p>
+                            <WaitlistForm />
+
+                            <h2 className={`${styles.sectionHeading} ${styles.sectionHeadingGradient}`} style={{ marginTop: '48px' }}>Get in touch</h2>
                             <ContactForm />
                         </div>
                         <div>

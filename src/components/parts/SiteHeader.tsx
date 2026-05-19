@@ -49,8 +49,8 @@ export default function SiteHeader() {
                             {link.label}
                         </Link>
                     ))}
-                    <Link href="/bundles" className={styles.shopButton}>
-                        Go to shop
+                    <Link href="/contact" className={styles.shopButton}>
+                        Join waitlist
                     </Link>
                     <a href="https://dashboard.fovibalt.com" className={styles.ctaButton}>
                         Go to dashboard
@@ -75,8 +75,8 @@ export default function SiteHeader() {
                         {link.label}
                     </Link>
                 ))}
-                <Link href="/bundles" className={styles.shopButton}>
-                    Go to shop
+                <Link href="/contact" className={styles.shopButton}>
+                    Join waitlist
                 </Link>
                 <a href="https://dashboard.fovibalt.com" className={styles.ctaButton}>
                     Go to dashboard
