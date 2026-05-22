@@ -6,6 +6,7 @@ import SiteHeader from '@/components/parts/SiteHeader'
 import Footer from '@/components/parts/Footer'
 import ScrollGlow from '@/components/effects/ScrollGlow'
 import MouseSpotlight from '@/components/effects/MouseSpotlight'
+import GoogleAnalytics from '@/components/seo/GoogleAnalytics'
 
 const FuturaDemiC = localFont({ src: '../../public/fonts/futurademic.ttf' })
 const openSans = Open_Sans({
@@ -104,6 +105,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.variable}>
     <head>
+      <GoogleAnalytics />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       {/* Material Icons loaded with display=swap to avoid render-blocking */}

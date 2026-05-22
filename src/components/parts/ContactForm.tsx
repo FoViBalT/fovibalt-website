@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from 'react';
 import styles from '@/app/shared.module.css';
+import { trackEvent } from '@/lib/analytics';
 
 interface ContactFormState {
     name: string;
@@ -45,6 +46,7 @@ export default function ContactForm() {
 
         setIsSubmitting(true);
         setSubmitStatus({ type: 'idle', message: '' });
+        trackEvent('form_submit', { form: 'contact' });
 
         try {
             const response = await fetch('/api/contact', {

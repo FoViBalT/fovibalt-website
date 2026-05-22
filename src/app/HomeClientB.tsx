@@ -9,7 +9,17 @@ import AnimatedCounter from '@/components/effects/AnimatedCounter';
 import TiltCard from '@/components/effects/TiltCard';
 import TypewriterText from '@/components/effects/TypewriterText';
 
-export default function HomeClient() {
+/**
+ * Variant B of the home page – used for A/B testing.
+ * Differences from A:
+ *  • Hero headline changed to "Light up your world"
+ *  • Hero sub-headline reordered (AI first)
+ *  • Feature check order changed (AI first, 3-step last)
+ *  • Hero CTA text changed to "Reserve your spot"
+ *  • Quote text changed to a more action-oriented copy
+ *  • CTA banner button text changed to "See bundles & pricing"
+ */
+export default function HomeClientB() {
     return (
         <div style={{ position: 'relative' }}>
             {/* ===== HERO SECTION ===== */}
@@ -17,13 +27,13 @@ export default function HomeClient() {
                 <div className={styles.heroInner}>
                     <div className={styles.heroContent}>
                         <RevealOnScroll variant="fadeUp">
-                            <h1 className={styles.heroH1}>Get out of darkness</h1>
+                            <h1 className={styles.heroH1}>Light up your world</h1>
                         </RevealOnScroll>
                         <RevealOnScroll variant="fadeUp" delay={100}>
                             <p className={styles.heroSubtitle}>
                                 with the only universal<br />
                                 <TypewriterText
-                                    words={['LED controller', 'smart lighting hub', 'lighting solution', 'AI-powered controller']}
+                                    words={['AI-powered controller', 'LED controller', 'smart lighting hub', 'lighting solution']}
                                     className={styles.heroTypewriter}
                                 />
                             </p>
@@ -31,10 +41,10 @@ export default function HomeClient() {
                         <RevealOnScroll variant="fadeUp" delay={200}>
                             <div className={styles.heroFeatures}>
                                 <span className={styles.featureCheck}>
-                                    <i className="material-icons">check</i> LedID™ tech
+                                    <i className="material-icons">check</i> AI and scripting support
                                 </span>
                                 <span className={styles.featureCheck}>
-                                    <i className="material-icons">check</i> AI and scripting support
+                                    <i className="material-icons">check</i> LedID™ tech
                                 </span>
                                 <span className={styles.featureCheck}>
                                     <i className="material-icons">check</i> Length up to 20m*
@@ -45,7 +55,13 @@ export default function HomeClient() {
                             </div>
                         </RevealOnScroll>
                         <RevealOnScroll variant="fadeUp" delay={300}>
-                            <Link href="/contact" className={styles.heroCta} trackLabel="hero_cta_a">Join wait list</Link>
+                            <Link
+                                href="/contact"
+                                className={styles.heroCta}
+                                trackLabel="hero_cta_b"
+                            >
+                                Reserve your spot
+                            </Link>
                         </RevealOnScroll>
                     </div>
                     <RevealOnScroll variant="scaleUp" delay={200}>
@@ -94,7 +110,7 @@ export default function HomeClient() {
             <section className={styles.quoteSection}>
                 <RevealOnScroll variant="scaleUp">
                     <h2 className={styles.quoteText}>
-                        Transform your lighting with unmatched precision and style
+                        Take full control of your lighting — smarter, easier, your way
                     </h2>
                 </RevealOnScroll>
             </section>
@@ -111,14 +127,6 @@ export default function HomeClient() {
                                 sizes="(max-width: 768px) 100vw, 320px"
                                 style={{ objectFit: 'cover' }}
                             />
-                            {/**
-                             * Placeholder (kept for reference)
-                             *
-                             * <div className={styles.imagePlaceholder}>
-                             *     <i className="material-icons">bluetooth_connected</i>
-                             *     Fovilight device shown in BLE pairing mode with nearby phone discovering it in the app device list
-                             * </div>
-                             */}
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeRight" delay={150}>
@@ -161,7 +169,9 @@ export default function HomeClient() {
                                 which simplifies installation and decreases error probability!
                             </p>
                             <p className={styles.featureSmall}>No need to lookup LED strip type, and no confusion!</p>
-                            <Link href="/technology" className={styles.featureLink}>Learn more about LedID™ →</Link>
+                            <Link href="/technology" className={styles.featureLink} trackLabel="ledid_learn_more_b">
+                                Learn more about LedID™ →
+                            </Link>
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeRight" delay={150}>
@@ -173,14 +183,6 @@ export default function HomeClient() {
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 style={{ objectFit: 'cover' }}
                             />
-                            {/**
-                             * Placeholder (kept for reference)
-                             *
-                             * <div className={styles.imagePlaceholder}>
-                             *     <i className="material-icons">memory</i>
-                             *     Close-up of fovilight controller with LED strip auto-detecting – screen/indicator showing detected strip type and length
-                             * </div>
-                             */}
                         </div>
                     </RevealOnScroll>
                 </div>
@@ -198,7 +200,9 @@ export default function HomeClient() {
                             <p className={styles.featureSmall}>
                                 Describe your custom effect and with AI will convert it to a working effect, that you can run
                             </p>
-                            <Link href="/technology" className={styles.featureLink}>Explore AI & scripting →</Link>
+                            <Link href="/technology" className={styles.featureLink} trackLabel="ai_explore_b">
+                                Explore AI & scripting →
+                            </Link>
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeLeft" delay={150}>
@@ -210,14 +214,6 @@ export default function HomeClient() {
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 style={{ objectFit: 'cover' }}
                             />
-                            {/**
-                             * Placeholder (kept for reference)
-                             *
-                             * <div className={styles.imagePlaceholder}>
-                             *     <i className="material-icons">auto_awesome</i>
-                             *     Mobile app AI chat interface – user typing lighting effect description, colorful preview of generated effect below
-                             * </div>
-                             */}
                         </div>
                     </RevealOnScroll>
                 </div>
@@ -235,7 +231,9 @@ export default function HomeClient() {
                             <p className={styles.featureSmall}>
                                 Share your creations with the community and discover thousands of unique lighting effects.
                             </p>
-                            <Link href="/roadmap" className={styles.featureLink}>See Effect Store roadmap →</Link>
+                            <Link href="/roadmap" className={styles.featureLink} trackLabel="effect_store_roadmap_b">
+                                See Effect Store roadmap →
+                            </Link>
                         </div>
                     </RevealOnScroll>
                     <RevealOnScroll variant="fadeRight" delay={150}>
@@ -247,14 +245,6 @@ export default function HomeClient() {
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 style={{ objectFit: 'cover' }}
                             />
-                            {/**
-                             * Placeholder (kept for reference)
-                             *
-                             * <div className={styles.imagePlaceholder}>
-                             *     <i className="material-icons">store</i>
-                             *     Effect store marketplace grid – showing various community-made lighting effect thumbnails with ratings and download counts
-                             * </div>
-                             */}
                         </div>
                     </RevealOnScroll>
                 </div>
@@ -266,7 +256,7 @@ export default function HomeClient() {
                     <RevealOnScroll variant="fadeUp">
                         <h2 className={styles.featuresHighlightHeading}>Everything you need, built in</h2>
                     </RevealOnScroll>
-                    <div className={styles.featuresGrid}> 
+                    <div className={styles.featuresGrid}>
                         {[
                             { icon: 'smart_toy', title: 'AI Integration', desc: 'Automate your lighting by telling the AI what lighting you want to see.', color: 'rgba(89,126,255,0.4)' },
                             { icon: 'group', title: 'Grouping', desc: 'Group controllers together for simultaneous control.', color: 'rgba(155,89,255,0.4)' },
@@ -334,14 +324,6 @@ export default function HomeClient() {
                                             sizes="(max-width: 768px) 100vw, 33vw"
                                             style={{ objectFit: 'cover' }}
                                         />
-                                        {/**
-                                         * Placeholder (kept for reference)
-                                         *
-                                         * <div className={styles.imagePlaceholder}>
-                                         *     <i className="material-icons">{bundle.icon}</i>
-                                         *     {bundle.imgDesc}
-                                         * </div>
-                                         */}
                                     </div>
                                 </div>
                                 <ul className={styles.bundleFeatures}>
@@ -349,7 +331,9 @@ export default function HomeClient() {
                                         <li key={f}>{f}</li>
                                     ))}
                                 </ul>
-                                <Link href="/bundles" className={styles.bundleExplore}>Explore</Link>
+                                <Link href="/bundles" className={styles.bundleExplore} trackLabel={`bundle_explore_${bundle.title.toLowerCase().replace(' ', '_')}_b`}>
+                                    Explore
+                                </Link>
                             </TiltCard>
                         </RevealOnScroll>
                     ))}
@@ -436,8 +420,12 @@ export default function HomeClient() {
                 <RevealOnScroll variant="scaleUp">
                     <div className={styles.ctaBannerInner}>
                         <h2 className={styles.ctaBannerHeading}>Fulfil your dreams with fovilight</h2>
-                        <Link href="/bundles" className={styles.ctaBannerBtn}>
-                            <span>Check out bundles</span>
+                        <Link
+                            href="/bundles"
+                            className={styles.ctaBannerBtn}
+                            trackLabel="cta_banner_bundles_b"
+                        >
+                            <span>See bundles &amp; pricing</span>
                             <i className="material-icons" style={{ marginLeft: '8px', fontSize: '20px' }}>arrow_forward</i>
                         </Link>
                     </div>

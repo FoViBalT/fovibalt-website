@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/parts/Link';
 import styles from '../shared.module.css';
 import RevealOnScroll from '@/components/effects/RevealOnScroll';
 import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';

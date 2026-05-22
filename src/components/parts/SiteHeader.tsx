@@ -1,10 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/parts/Link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './SiteHeader.module.css';
+import { trackEvent } from '@/lib/analytics';
 
 const navLinks = [
     { href: '/', label: 'Home' },
@@ -52,13 +53,15 @@ export default function SiteHeader() {
                     <Link href="/contact" className={styles.shopButton}>
                         Join waitlist
                     </Link>
-                    <a href="https://dashboard.fovibalt.com" className={styles.ctaButton}>
+                    <a href="https://dashboard.fovibalt.com" className={styles.ctaButton}
+                        onClick={() => trackEvent('cta_click', { label: 'dashboard', destination: 'https://dashboard.fovibalt.com' })}
+                    >
                         Go to dashboard
                     </a>
                 </nav>
                 <button
                     className={styles.mobileMenuBtn}
-                    onClick={() => setMobileOpen(!mobileOpen)}
+                    onClick={() => { setMobileOpen(!mobileOpen); trackEvent('mobile_menu_toggle', { open: !mobileOpen }); }}
                     aria-label="Toggle menu"
                     aria-expanded={mobileOpen}
                 >
@@ -78,7 +81,9 @@ export default function SiteHeader() {
                 <Link href="/contact" className={styles.shopButton}>
                     Join waitlist
                 </Link>
-                <a href="https://dashboard.fovibalt.com" className={styles.ctaButton}>
+                <a href="https://dashboard.fovibalt.com" className={styles.ctaButton}
+                    onClick={() => trackEvent('cta_click', { label: 'dashboard_mobile', destination: 'https://dashboard.fovibalt.com' })}
+                >
                     Go to dashboard
                 </a>
             </nav>

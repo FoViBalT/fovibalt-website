@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from 'react';
 import styles from '@/app/shared.module.css';
+import { trackEvent } from '@/lib/analytics';
 
 interface WaitlistFormState {
     email: string;
@@ -36,6 +37,7 @@ export default function WaitlistForm() {
 
         setIsSubmitting(true);
         setSubmitStatus({ type: 'idle', message: '' });
+        trackEvent('form_submit', { form: 'waitlist' });
 
         try {
             const response = await fetch('/api/waitlist', {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import HomeClient from './HomeClient';
+import ABTestHome from '@/components/ABTestHome';
 
 export const metadata: Metadata = {
   title: 'Fovilight - The Only Universal LED Strip Controller | LedID™ Auto-Detection & AI Effects',
@@ -123,7 +123,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HomeClient />
+      <ABTestHome />
     </>
   );
 }

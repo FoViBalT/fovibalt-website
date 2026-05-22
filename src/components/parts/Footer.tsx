@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/parts/Link';
 import styles from './Footer.module.css';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Footer() {
     return (
@@ -32,7 +35,9 @@ export default function Footer() {
                     </div>
                     <div className={styles.footerCol}>
                         <h4>Resources</h4>
-                        <a href="https://dashboard.fovibalt.com" target="_blank" rel="noopener noreferrer">Dashboard</a>
+                        <a href="https://dashboard.fovibalt.com" target="_blank" rel="noopener noreferrer"
+                            onClick={() => trackEvent('cta_click', { label: 'footer_dashboard', destination: 'https://dashboard.fovibalt.com' })}
+                        >Dashboard</a>
                         <Link href="/setup">Quick Start</Link>
                         <Link href="/technology">LedID™ Docs</Link>
                     </div>
@@ -40,7 +45,9 @@ export default function Footer() {
                 <div className={styles.footerBottom}>
                     <span className={styles.copyright}>© 2026 Fovibalt. All rights reserved.</span>
                     <div className={styles.footerSocials}>
-                        <a href="https://www.instagram.com/fovibalt/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
+                        <a href="https://www.instagram.com/fovibalt/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"
+                            onClick={() => trackEvent('cta_click', { label: 'footer_instagram', destination: 'https://www.instagram.com/fovibalt/' })}
+                        >📷</a>
                     </div>
                 </div>
             </div>
