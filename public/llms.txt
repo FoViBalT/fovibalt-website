@@ -1,0 +1,57 @@
+# Fovibalt
+
+> Fovibalt builds Fovilight — the only universal LED strip controller. It auto-detects 20+ LED strip types with proprietary LedID™ technology, supports AI-generated effects, Lua scripting, BLE setup, and operates fully local-first.
+
+## What is Fovilight?
+
+Fovilight is a smart LED strip controller designed to work with any LED strip out of the box. Most smart LED controllers require you to manually configure the LED type, protocol, and length. Fovilight eliminates this with LedID™ — a proprietary auto-detection technology that identifies the strip type, communication protocol, strip length, and any fault conditions automatically within seconds of powering on.
+
+## Key Features
+
+- **LedID™ Auto-Detection**: Automatically detects 20+ LED strip types — no manual configuration needed.
+- **Universal LED Support**: WS2811, WS2812, WS2812B, WS2813, WS2814, WS2815, WS2818, WS2801, SK6812, SK6812 RGB, SK6812 RGBW, SK6812 MINI, SK6812 MINI-E, SK9822, APA102, APA102C, HD107S, standard RGB, RGBW, RGB WW CW, WW CW, WW, CW.
+- **AI-Generated Effects**: Describe a lighting effect in plain language and the on-device AI generates it instantly.
+- **Lua Scripting Engine**: Full embedded Lua scripting for developers who want complete custom control.
+- **Effect Marketplace**: Download and share community-made Lua lighting effects.
+- **BLE Setup (3 steps)**: Pair the device over Bluetooth Low Energy in 3 steps — no cloud account needed.
+- **Local-First Operation**: Works without internet. Lights keep running even if the router is offline.
+- **Versatile Power Input**: Supports 5V–24V DC input, up to 20A.
+- **Over-current & Over-voltage Protection**: Hardware protection prevents LED strip and controller damage.
+- **Wi-Fi Connectivity** (optional): Connect to your home network for remote access.
+
+## Product Line
+
+Fovilight is available in three bundles:
+- **Starter Kit**: Core controller for getting started.
+- **Pro Kit**: Advanced features for power users.
+- **Replacement Kit**: For users upgrading an existing LED setup.
+
+All bundles are available at: https://fovibalt.com/bundles
+
+## Technology Deep-Dive
+
+Full technical explanation of LedID™, AI effect generation, Lua scripting, power specifications, and connectivity: https://fovibalt.com/technology
+
+## Setup Guide
+
+Step-by-step visual setup guide (21 steps with images): https://fovibalt.com/setup
+
+## Company
+
+Fovibalt is the company behind Fovilight. Website: https://fovibalt.com
+Contact: https://fovibalt.com/contact
+
+## Pages
+
+- Home: https://fovibalt.com
+- Technology: https://fovibalt.com/technology
+- Setup Guide: https://fovibalt.com/setup
+- Bundles & Pricing: https://fovibalt.com/bundles
+- About: https://fovibalt.com/about
+- Contact: https://fovibalt.com/contact
+- Roadmap: https://fovibalt.com/roadmap
+- Compare: https://fovibalt.com/compare
+
+## Full Content
+
+For a comprehensive version of this document with full page content, see: https://fovibalt.com/llms-full.txt

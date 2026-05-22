@@ -111,6 +111,9 @@ export default function RootLayout({
       {/* Material Icons loaded with display=swap to avoid render-blocking */}
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
+      {/* AI agent / LLM discovery hints */}
+      <link rel="ai-content-policy" href="/llms.txt" />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     </head>
       <body className={FuturaDemiC.className}>
         <div className="appShell">

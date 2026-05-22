@@ -49,6 +49,19 @@ const jsonLd = {
       description:
         'Fovilight supports 20+ LED strip types with LedID™ auto-detection, AI effects, Lua scripting, BLE setup, and local-first control.',
       inLanguage: 'en-US',
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2', '[data-speakable]'],
+      },
+      mentions: [
+        { '@type': 'Thing', name: 'LedID™', description: 'Proprietary auto-detection technology that identifies LED strip type, protocol, length, and fault conditions automatically.' },
+        { '@type': 'Thing', name: 'WS2812', url: 'https://fovibalt.com/technology' },
+        { '@type': 'Thing', name: 'SK6812', url: 'https://fovibalt.com/technology' },
+        { '@type': 'Thing', name: 'APA102', url: 'https://fovibalt.com/technology' },
+        { '@type': 'Thing', name: 'Lua scripting', url: 'https://fovibalt.com/technology' },
+        { '@type': 'Thing', name: 'Bluetooth Low Energy', alternateName: 'BLE' },
+        { '@type': 'Thing', name: 'local-first software', description: 'Software that works without internet, storing data and logic on the device itself.' },
+      ],
     },
     // {
     //   '@type': 'Product',

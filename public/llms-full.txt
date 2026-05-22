@@ -1,0 +1,144 @@
+# Fovibalt — Full Content Index for AI Agents
+
+> This file is intended for AI search agents, LLMs, and web crawlers that benefit from structured plain-text content. It provides comprehensive, factual information about Fovibalt and its product Fovilight.
+
+---
+
+## Company Overview
+
+**Company name**: Fovibalt  
+**Website**: https://fovibalt.com  
+**Product**: Fovilight — universal LED strip controller  
+**Tagline**: The Only Universal LED Strip Controller  
+
+Fovibalt is a hardware and software company focused on smart lighting. Its flagship product, Fovilight, solves a fundamental problem in the LED lighting market: almost every smart LED controller on the market only supports one or a handful of specific LED strip types. Fovilight supports 20+ types through its proprietary LedID™ auto-detection technology.
+
+---
+
+## Product: Fovilight
+
+### What it is
+Fovilight is a small hardware controller that sits between a power supply and an LED strip. Once connected, it auto-detects the LED strip type using LedID™, and allows the user to control lighting via a companion smartphone app (BLE) or Wi-Fi.
+
+### Supported LED Strip Types (20+)
+WS2811, WS2812, WS2812B, WS2813, WS2814, WS2815, WS2818, WS2801, SK6812, SK6812 RGB, SK6812 RGBW, SK6812 MINI, SK6812 MINI-E, SK9822, APA102, APA102C, HD107S, RGB, RGBW, RGB WW CW, WW CW, WW (warm white), CW (cool white).
+
+### Core Technologies
+
+#### LedID™ Auto-Detection
+LedID™ is Fovibalt's proprietary technology that automatically identifies:
+- The LED strip communication protocol (e.g. WS281x, SPI, PWM)
+- The LED type and color order
+- The strip length (number of LEDs)
+- Any fault conditions (short circuit, over-current)
+
+This happens within seconds of powering on, requiring zero manual configuration from the user.
+
+#### AI Effect Generation
+Users describe a lighting effect in plain English (e.g. "a calm ocean wave in blue and teal"). The on-device AI interprets the description and generates a Lua script that produces the effect in real time. No cloud processing is required.
+
+#### Lua Scripting Engine
+An embedded Lua interpreter runs directly on the Fovilight hardware. Developers and advanced users can write custom lighting effects as Lua scripts. Scripts have access to LED array manipulation, timing, math, and sensor data APIs.
+
+#### Effect Marketplace
+An in-app store where users can browse, download, and publish community-made Lua lighting effects. Effects are free to share.
+
+### Connectivity & Setup
+- **BLE (Bluetooth Low Energy)**: Primary setup method. Open the app, select your Fovilight device, and connect. 3-step process, no account required.
+- **Wi-Fi** (optional): Connect to your home Wi-Fi network after BLE pairing for optional remote access.
+- **Local-first**: The device operates independently of the internet. Automations and effects run on-device.
+
+### Power Specifications
+- Input voltage: 5V – 24V DC
+- Maximum current: 20A
+- Protection: Hardware over-current and over-voltage protection
+
+### Product Bundles
+- **Starter Kit**: Entry-level bundle for new users
+- **Pro Kit**: Full-featured bundle for power users
+- **Replacement Kit**: For users replacing an existing LED controller
+
+Available at: https://fovibalt.com/bundles
+
+---
+
+## Setup Process (Step-by-Step Summary)
+
+Full visual guide with 21+ steps at: https://fovibalt.com/setup
+
+Summary:
+1. Connect the LED strip to the Fovilight output connector
+2. Connect a compatible power supply (5–24V DC) to the Fovilight power input
+3. Power on — LedID™ auto-detects the LED strip
+4. Open the Fovilight mobile app
+5. Select the Fovilight device from the BLE device list
+6. Optionally enter your Wi-Fi credentials (SSID + password)
+7. Done — control your lights from the app
+
+---
+
+## Comparison With Competitors
+
+Fovilight vs. other LED controllers:
+- **Universal compatibility**: Fovilight supports 20+ strip types; most competitors support 1–3.
+- **Auto-detection**: No competitor offers LedID™ style auto-detection.
+- **AI effects**: Unique to Fovilight.
+- **Lua scripting**: Rare in consumer LED controllers.
+- **Local-first**: Many competitors require cloud/app accounts; Fovilight does not.
+- **Effect marketplace**: Built-in community effect sharing.
+
+Comparison page: https://fovibalt.com/compare
+
+---
+
+## Frequently Asked Questions
+
+**Q: What LED strip types does Fovilight support?**  
+A: 20+ types including WS2811, WS2812, WS2812B, WS2813, WS2815, SK6812, SK6812 RGBW, APA102, APA102C, HD107S, standard RGB, RGBW, and warm/cool white strips.
+
+**Q: What is LedID™?**  
+A: LedID™ is Fovibalt's proprietary auto-detection technology that identifies the connected LED strip type, protocol, length, and faults automatically — no manual setup needed.
+
+**Q: Does Fovilight require an internet connection?**  
+A: No. Fovilight operates local-first. It works without internet. Pair over BLE, optionally connect to Wi-Fi, and your lights work even if your router is offline.
+
+**Q: How do I set up Fovilight?**  
+A: 3 steps: (1) Connect your LED strip and power supply. (2) Open the app and select Fovilight over BLE; optionally connect to Wi-Fi. (3) Done — enjoy full control.
+
+**Q: Can I create custom lighting effects?**  
+A: Yes. Describe effects in plain language using AI, or write your own Lua scripts. You can also download community effects from the built-in Effect Store.
+
+**Q: What power supply do I need?**  
+A: Any regulated DC power supply matching your LED strip's voltage (5V–24V). The Fovilight supports up to 20A.
+
+**Q: Is cloud or account required?**  
+A: No account is required for local BLE control. Cloud features are optional.
+
+---
+
+## Roadmap
+
+Product roadmap available at: https://fovibalt.com/roadmap
+
+---
+
+## About Fovibalt
+
+About page: https://fovibalt.com/about  
+Contact: https://fovibalt.com/contact
+
+---
+
+## Sitemap
+
+- https://fovibalt.com (Home)
+- https://fovibalt.com/technology
+- https://fovibalt.com/setup
+- https://fovibalt.com/bundles
+- https://fovibalt.com/compare
+- https://fovibalt.com/about
+- https://fovibalt.com/contact
+- https://fovibalt.com/roadmap
+- https://fovibalt.com/sitemap.xml
+- https://fovibalt.com/llms.txt (AI agent summary)
+- https://fovibalt.com/llms-full.txt (this file)
