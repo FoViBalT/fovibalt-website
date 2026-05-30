@@ -1,27 +1,12 @@
-import Script from 'next/script';
+import { GoogleAnalytics as NextGoogleAnalytics } from '@next/third-parties/google';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 /**
- * Injects the Google Analytics 4 global site tag.
+ * Injects the Google Analytics 4 global site tag via @next/third-parties.
  * Renders nothing when the measurement ID is not configured.
  */
 export default function GoogleAnalytics() {
   if (!GA_ID) return null;
-  return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="ga4-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}', { send_page_view: true });
-        `}
-      </Script>
-    </>
-  );
+  return <NextGoogleAnalytics gaId={GA_ID} />;
 }

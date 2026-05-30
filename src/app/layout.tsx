@@ -131,7 +131,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.variable}>
     <head>
-      <GoogleAnalytics />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       {/* Material Icons loaded with display=swap to avoid render-blocking */}
@@ -153,6 +152,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <GoogleAnalytics />
       </body>
     </html>
   )
