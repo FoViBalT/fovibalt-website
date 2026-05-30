@@ -28,6 +28,13 @@ export default function HomeClient() {
                                 />
                             </p>
                         </RevealOnScroll>
+                        <RevealOnScroll variant="fadeUp" delay={150}>
+                            <p className={styles.heroTagline} data-speakable>
+                                Works with <strong>WS2812B, WS2815, SK6812, APA102</strong> &amp; 20+ LED types.
+                                Local&#8209;first, no soldering, Home&nbsp;Assistant compatible.
+                                The Govee &amp; Philips&nbsp;Hue Lightstrip alternative with universal compatibility.
+                            </p>
+                        </RevealOnScroll>
                         <RevealOnScroll variant="fadeUp" delay={200}>
                             <div className={styles.heroFeatures}>
                                 <span className={styles.featureCheck}>
@@ -96,6 +103,37 @@ export default function HomeClient() {
                     <h2 className={styles.quoteText}>
                         Transform your lighting with unmatched precision and style
                     </h2>
+                </RevealOnScroll>
+            </section>
+
+            {/* ===== COMPATIBILITY CALLOUT ===== */}
+            <section className={styles.compatSection} aria-label="Govee Philips Hue WLED alternative" data-speakable>
+                <RevealOnScroll variant="fadeUp">
+                    <div className={styles.compatInner}>
+                        <h2 className={styles.compatHeading}>
+                            Replaces your Govee, Philips Hue Lightstrip, or WLED setup — without compatibility lock-in
+                        </h2>
+                        <p className={styles.compatSubtext}>
+                            Tired of LED controllers that only work with their own strips? Govee locks you into Govee hardware.
+                            Philips Hue Lightstrip requires a Hue Bridge and proprietary strips. WLED is powerful but needs soldering and firmware flashing.
+                            <strong> Fovilight works with whatever LED strip you already have</strong> — WS2812B, WS2815, SK6812, APA102, and 20+ more —
+                            with zero manual configuration, no cloud account, and a 3-step BLE setup. <strong>EU shipping available.</strong>
+                        </p>
+                        <div className={styles.compatGrid}>
+                            {[
+                                { label: 'vs Govee', desc: 'Any LED strip, not just Govee-branded. No cloud lock-in.' },
+                                { label: 'vs Philips Hue', desc: 'No Bridge required. Works with any LED strip at any price point.' },
+                                { label: 'vs WLED', desc: 'No soldering. No firmware flashing. Same local-first power.' },
+                                { label: 'vs Tuya / Smart Life', desc: 'Fully local-first. Works offline. Home Assistant compatible.' },
+                            ].map((item) => (
+                                <div key={item.label} className={styles.compatCard}>
+                                    <strong className={styles.compatCardLabel}>{item.label}</strong>
+                                    <p className={styles.compatCardDesc}>{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <Link href="/compare" className={styles.compatLink}>See full comparison →</Link>
+                    </div>
                 </RevealOnScroll>
             </section>
 
@@ -418,6 +456,22 @@ export default function HomeClient() {
                             {
                                 q: 'What power options are available?',
                                 a: 'Fovilight supports USB Type-C (5A), barrel jack (7A), and screw terminal (up to 20A) with a 5-24V voltage range. Use a power bank for portable setups.',
+                            },
+                            {
+                                q: 'Is Fovilight a good Govee alternative?',
+                                a: 'Yes. Unlike Govee, Fovilight works with any LED strip — not just proprietary ones. It also runs local-first without a cloud account, supports 20+ LED types, and requires no soldering.',
+                            },
+                            {
+                                q: 'How does Fovilight compare to Philips Hue Lightstrip?',
+                                a: 'Fovilight works with any LED strip (WS2812B, SK6812, APA102, and more) while Philips Hue only works with its own proprietary strips and requires an expensive Hue Bridge.',
+                            },
+                            {
+                                q: 'Is Fovilight compatible with Home Assistant?',
+                                a: 'Yes. Fovilight\'s local-first Wi-Fi API makes it compatible with Home Assistant without cloud access — ideal for local home automation.',
+                            },
+                            {
+                                q: 'Does Fovilight ship to EU countries?',
+                                a: 'Yes. Fovilight ships to EU countries including Germany, France, Italy, Netherlands, Spain, and others. Visit the bundles page for shipping details.',
                             },
                         ].map((faq) => (
                             <RevealOnScroll key={faq.q} variant="fadeUp">

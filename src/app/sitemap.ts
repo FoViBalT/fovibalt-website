@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Use a fixed date — update this when page content actually changes.
   // Using new Date() generates a fresh timestamp on every fetch, which
   // makes Google distrust the sitemap and deprioritise re-crawling.
-  const lastModified = new Date('2025-03-24T00:00:00Z');
+  const lastModified = new Date('2026-05-23T00:00:00Z');
 
   return [
     {
@@ -18,13 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/technology`,
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/setup`,
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
@@ -36,25 +36,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/compare`,
       lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/roadmap`,
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/contact`,
       lastModified,
-      changeFrequency: 'yearly',
+      changeFrequency: 'weekly',
       priority: 0.5,
     },
   ];

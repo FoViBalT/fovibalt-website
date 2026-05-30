@@ -227,6 +227,85 @@
     -webkit-text-fill-color: transparent;
 }
 
+/* ===== HERO TAGLINE (SEO text under typewriter) ===== */
+.heroTagline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--Text_2, rgba(255,255,255,0.65));
+    max-width: 540px;
+    margin: 12px 0 0;
+}
+
+/* ===== COMPATIBILITY / COMPETITOR CALLOUT ===== */
+.compatSection {
+    padding: var(--section-padding) var(--content-gutter);
+    background: var(--Background_2, rgba(255,255,255,0.03));
+}
+
+.compatInner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.compatHeading {
+    font-size: var(--section-h2);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.compatSubtext {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--Text_2, rgba(255,255,255,0.7));
+    max-width: 780px;
+    margin: 0 auto 40px;
+}
+
+.compatGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.compatCard {
+    background: var(--Background_3, rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+}
+
+.compatCardLabel {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--Accent_1, #597eff);
+    margin-bottom: 8px;
+}
+
+.compatCardDesc {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--Text_2, rgba(255,255,255,0.65));
+    margin: 0;
+}
+
+.compatLink {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--Accent_1, #597eff);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.compatLink:hover { opacity: 0.75; }
+
 /* ===== PRODUCT INFO (BLE/Description) ===== */
 .productInfo {
     padding: 80px var(--content-gutter) var(--section-padding);
@@ -752,6 +831,15 @@
         text-align: center;
     }
 
+    .heroTagline {
+        text-align: center;
+        margin: 12px auto 0;
+    }
+
+    .compatGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .heroFeatures {
         grid-template-columns: 1fr;
         justify-items: center;
@@ -992,5 +1080,11 @@
 
     .faqAnswer {
         padding: 0 20px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .compatGrid {
+        grid-template-columns: 1fr;
     }
 }
